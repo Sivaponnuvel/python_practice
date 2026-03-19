@@ -20,3 +20,17 @@ elif user1 == user3:
     print(f"{user1} is the largest number")
 
     
+# Question 2
+# Write a Python program to take a year from the user and check whether it is a leap year or not.
+
+def leap(year):
+    if year % 400 == 0:
+        return (f"{year} is a leap year")
+    elif year % 100 == 0:
+        return (f"{year} is a not leap year")
+    elif year % 4 == 0:
+        return (f"{year} is a leap year")
+    else:
+        return (f"{year} is a not leap year")
+n = int(input("enter the year : "))
+print(leap(n))
