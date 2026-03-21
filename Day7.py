@@ -9,3 +9,14 @@ def num(n):
 user = int(input("enter the number : "))
 num(user)
 
+
+# Question 2
+# Write a Python program to take a number from the user and find its factorial using a loop.
+
+def fact(f):
+    a = 1
+    for i in range(1,f+1):
+        a *= i
+    print(f"factorial of {f} is {a}")
+user1 = int(input("enter the number : "))
+fact(user1)
