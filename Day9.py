@@ -23,3 +23,14 @@ def palin(n):
 s =  input("Enter the name : ")
 palin(s)   
 
+# not use built-in funcation
+def drome(x):
+    palindrome = ""
+    for i in x:
+        palindrome = i + palindrome
+    if x == palindrome:
+        print(f"{x} is palindrome")
+    else:
+        print(f"{x} is not a palindrome")
+p =  input("Enter the name : ")
+drome(p)
