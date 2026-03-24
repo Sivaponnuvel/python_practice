@@ -12,3 +12,13 @@ n = list(map(int,n))
 lis(n)
 
 
+# Question 2
+# Write a Python program to take a list of numbers from the user and calculate the sum of all elements in the list.
+def sum(s):
+    p = 0
+    for i in s:
+        p += i
+    print(p)
+x =  input("Enter numbers separated by space : ").split()
+x = list(map(int,x))
+sum(x)
