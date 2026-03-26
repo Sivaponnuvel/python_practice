@@ -17,3 +17,15 @@ x = list(map(int,x))
 second_largest(x)
 
 
+# Question 2
+# Write a Python program to take a list of numbers from the user and remove all duplicate elements (print only unique values).
+
+def unique(s):
+    unique_numbers = []
+    for i in s:
+        if i not in unique_numbers:
+            unique_numbers.append(i)
+    print(f"Unique values: {unique_numbers}")
+a = input("enter the numbers : ").split()
+a = list(map(int,a))
+unique(a)
