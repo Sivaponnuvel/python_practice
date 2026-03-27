@@ -20,3 +20,14 @@ x = input("Enter the word : ")
 char(x)
 
 
+# Question 2
+# Write a Python program to take a string from the user and remove all spaces from the string (without using replace()).
+
+def rmv(r):
+    result = ""
+    for i in r:
+        if i != " ":
+            result += i
+    print(result)
+y = input("enter the sentence : ")
+rmv(y)
