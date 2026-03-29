@@ -15,3 +15,20 @@ numbers = list(map(int,numbers))
 sum_even(numbers)
 
 
+# Question 2
+# Write a Python program to take a string from the user and find the first non-repeating character.
+# 👉 Example:
+# Input: aabbcde
+# Output: c
+
+def first_non_repeating(s):
+    for i in s:
+        count = 0
+        for j in s:
+            if i == j:
+                count += 1
+        if count == 1:
+            print(f"First Non-repeating character is : {i}")
+            break
+word = input("enter the word :")
+first_non_repeating(word)
