@@ -17,3 +17,18 @@ b = list(map(int,b))
 common(a,b)
 
 
+# Question 2
+# Write a Python program to:
+# 👉 Take a string
+# 👉 Find the first repeated character
+
+def character(s):
+    first_repeated_character = []
+    for i in s:
+        if i in first_repeated_character:
+            print(f"first repeated character is : {i}")
+            break
+        else:
+            first_repeated_character.append(i)
+p = input("enter the word : ")
+character(p)
