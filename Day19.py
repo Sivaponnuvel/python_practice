@@ -15,3 +15,22 @@ nums = list(map(int,input("enter the numbers : ").split()))
 print(f"Missing number : {find_missing(nums)}")
 
 
+# Question 2
+# Write a Python program to:
+# 👉 Take a string from the user
+# 👉 Check whether the string is an anagram of another string
+# 👉 Example:
+# Input: listen, silent
+# Output: Anagram
+
+# method-1
+def anagram(a,b):
+    x = sorted(a)
+    y = sorted(b)
+    if x == y:
+        print("Anagram")
+    else:
+        print("Not Anagram")
+word_1 = input("enter the 1st word : ")
+word_2 = input("enter the 2nd word : ")
+anagram(word_1,word_2)
