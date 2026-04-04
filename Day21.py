@@ -37,3 +37,40 @@ s.withdraw(withdraw)
 print(f"Now current Balance is {s.get_balance()}")
 
 
+# Question 2
+# Write a Python program to:
+# 👉 Create a class Student
+# 👉 Private variables:
+# __name
+# __marks
+# 👉 Methods:
+# set_details(name, marks) → assign values
+# get_details() → print name and marks
+# is_pass() →
+# ✔ If marks ≥ 35 → "Pass"
+# ❌ Else → "Fail"
+# 🧠 Example
+# Name: Siva
+# Marks: 40
+# Result: Pass
+
+class Student:
+    def __init__(self):
+        self.__name = None
+        self.__mark = None
+    def set_details(self,name,mark):
+        self.__name = name
+        self.__mark = mark
+    def get_details(self):
+        print(f"Name : {self.__name}\nMark : {self.__mark}")
+    def is_pass(self):
+        if self.__mark >= 35:
+            print("Result : Pass✅")
+        else:
+            print("Result : Fail❌")
+name =  input("Enter the student name : ")
+mark = int(input("Enter the student mark : "))
+s1 = Student()
+s1.set_details(name,mark)
+s1.get_details()
+s1.is_pass()
