@@ -32,3 +32,31 @@ s.display()
 s.display_student()
 
 
+# Question 2
+# Write a Python program to:
+# 👉 Create class Employee
+# variables: name, salary
+# method: display_employee()
+# 👉 Create class Manager (inherits Employee)
+# add variable: department
+# method: display_manager()
+# 👉 Create object and display all details
+
+class Employee:
+    def __init__(self,name,salary):
+        self.name = name 
+        self.salary = salary
+    def display_employee(self):
+        print(f"Name : {self.name} \nSalary : {self.salary}")
+class Manager(Employee):
+    def __init__(self,name,salary,department):
+        super().__init__(name, salary)
+        self.department =  department
+    def display_manager(self):
+        print(f"Department : {self.department}")
+name = input("Enter the employee name : ")
+salary = int(input("Enter the employee salary : "))
+department = input("Enter the employee department : ")
+e = Manager(name,salary,department)
+e.display_employee()
+e.display_manager()
