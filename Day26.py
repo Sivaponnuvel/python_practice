@@ -24,3 +24,29 @@ else:
     print(f"sum: {s.add(a,b)}")
 
 
+# 🔥 Question 2
+# Write a Python program to:
+# 👉 Create class Display
+# method: show()
+# 👉 Method should handle:
+# 1 argument
+# 2 arguments
+# 👉 Print output based on input
+# 🧠 Example Output
+# Value: 10
+# Values: 10 20
+
+class Display:
+    def show(self,s,p=None):
+        if p is None:
+            return f"Value: {s}"
+        else:
+            return f"Values: {s} {p}"
+s = int(input("Enter the value : "))
+choice1 = input("Do you want to enter second value? (yes/no): ")
+s1 = Display()
+if choice1 == "yes":
+    p = int(input("Enter the value : "))
+    print(s1.show(s,p))
+else:
+    print(s1.show(s))
