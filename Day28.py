@@ -16,3 +16,15 @@ def sum_all(*args):
 numbers = list(map(int,input("Enter the numbers : ").split()))
 print(f"Sum: {sum_all(*numbers)}")
 
+# method-2
+def sum_all(*args):
+    if not args:
+        return "No values"
+    a = 0
+    for i in args:
+        a += i
+    return a
+numbers = list(map(int,input("Enter the numbers : ").split()))
+print(f"Sum: {sum_all(*numbers)}")
+
+
