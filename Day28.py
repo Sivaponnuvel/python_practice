@@ -45,3 +45,14 @@ def find_max(*args):
 numbers = list(map(int,input("Enter the numbers : ").split()))
 print(f"Max: {find_max(*numbers)}")
 
+# method-2
+def find_max(*args):
+    if not args:
+        return "No values"
+    largest_number = args[0]
+    for i in args:
+        if i > largest_number:
+            largest_number = i
+    return largest_number
+numbers = list(map(int,input("Enter the numbers : ").split()))
+print(f"Max: {find_max(*numbers)}")
