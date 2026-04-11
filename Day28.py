@@ -28,3 +28,20 @@ numbers = list(map(int,input("Enter the numbers : ").split()))
 print(f"Sum: {sum_all(*numbers)}")
 
 
+# 🔥 Question 2
+# Write a Python program to:
+# 👉 Create a function find_max()
+# use *args
+# return the largest number
+# 👉 Print the result
+# 🧠 Example Output
+# Max: 50
+
+# method-1
+def find_max(*args):
+    if not args:
+        return "No values"
+    return max(args)
+numbers = list(map(int,input("Enter the numbers : ").split()))
+print(f"Max: {find_max(*numbers)}")
+
