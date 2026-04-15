@@ -22,3 +22,22 @@ with open("D:/Python/Own try/practice/Day33/story.txt") as file:
     print(f"Total lines: {len(read)}")
 
 
+# 🔥 Question 2
+# Write a Python program to:
+# 👉 Create a file data.txt
+# 👉 Write a paragraph (sentence) into the file
+# 👉 Take a word from user
+# 👉 Read the file
+# 👉 Count how many times the word appears
+# 👉 Print the count
+# 🧠 Example Output
+# Word count: 2
+
+with open("D:/Python/Own try/practice/Day33/data.txt","w") as file:
+    file.write("Python is a powerful programming language.\nPython is easy to learn.\nMany developers use Python for real-world applications.")
+
+with open("D:/Python/Own try/practice/Day33/data.txt") as file:
+    read = file.read().lower()
+    word = input("Enter the word : ").lower()
+    count = read.split().count(word)
+    print(f"Word count : {count}")
