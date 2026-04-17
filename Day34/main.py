@@ -23,3 +23,24 @@ except ZeroDivisionError:
     print("Error: division by zero")
 
 
+# 🔥 Question 2
+# Write a Python program to:
+# 👉 Take a filename from user
+# 👉 Try to open and read the file
+# 👉 Handle error if file does not exist
+# 👉 Print file content if exists
+# 🧠 Example Output
+# File content: Hello world
+# OR
+# Error: file not found
+
+try :
+    user = input("Enter the file name : ")
+    with open(user)as file:
+        content = file.read()
+        if content:
+            print(f"File content: {content}")
+        else:
+            print("File is empty")
+except FileNotFoundError:
+    print("Error: File not found")
