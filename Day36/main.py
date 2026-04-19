@@ -24,3 +24,30 @@ finally:
     print("File operation completed")
 
 
+# 🔥 Question 2
+# Write a Python program to:
+# 👉 Take a number from user
+# 👉 Divide 100 by that number
+# 👉 Handle:
+# invalid input
+# division by zero
+# 👉 Use finally to print:
+# "Execution completed"
+# 🧠 Example Output
+# Result: 20
+# Execution completed
+# OR
+# Error: division by zero
+# Execution completed
+
+try:
+    number = int(input("Enter the number : "))
+    division =  100/number
+except ValueError:
+    print("Error: invalid input")
+except ZeroDivisionError:
+    print("Error: division by zero")
+else:
+    print(f"Result: {division}")
+finally:
+    print("Execution completed")
