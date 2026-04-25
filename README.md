@@ -48,6 +48,7 @@ I am consistently improving my problem-solving and programming skills by practic
 * Day39 – Completed ✅
 * Day40 – Completed ✅
 * Day41 – Completed ✅
+* Day42 – Completed ✅
 
 ---
 
