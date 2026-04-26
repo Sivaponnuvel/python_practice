@@ -39,3 +39,69 @@ obj.save_user()
 obj.display_users()
 
 
+# 🔹 Question 2
+# Write a Python program to:
+# 👉 Create a class LoginSystem
+# Methods:
+# register(username, password)
+# Save to file
+# login(username, password)
+# Check from file
+# If match → "Login Success"
+# Else → raise error
+# Rules:
+# Use same users.txt file
+# Handle:
+# file not found
+# invalid login
+# 🧠 Example Output:
+# Enter username: siva
+# Enter password: 12345
+# Login Success ✅
+# OR
+# Error: Invalid credentials ❌
+
+class LoginSystem:
+    def __init__(self,username,password):
+        self.__username = username
+        self.__password = password
+    def register(self):
+        try:
+            with open ("D:/Python/Own try/practice/Day44/users.txt") as file:
+                for i in file:
+                    if i.strip() == "":
+                        continue
+                    name, pwd = i.strip().split(",")
+                    if name == self.__username:
+                        raise ValueError("User already exists! Please login.")
+        except FileNotFoundError:
+            pass
+        with open ("D:/Python/Own try/practice/Day44/users.txt","a") as file:
+            file.write(f"{self.__username},{self.__password}\n")
+        print("Registered successfully! ✅")
+    def login(self):
+        try:
+            with open ("D:/Python/Own try/practice/Day44/users.txt") as file:
+                for i in file:
+                    if i.strip() == "":
+                        continue
+                    name, pwd = i.strip().split(",")
+                    if name == self.__username and pwd == self.__password:
+                        print("Login Success ✅")
+                        return
+            raise ValueError("Invalid credentials ❌")
+        except FileNotFoundError:
+            print("No users found yet!")
+choice = input("Enter 1 for Register / 2 for Login: ")
+username1 = input("Enter username: ")
+password1 = input("Enter password: ")
+obj1 = LoginSystem(username1,password1)
+try:
+    if choice == "1":
+        obj1.register()
+    elif choice == "2":
+        obj1.login()
+    else:
+        print("Invalid choice ❌")
+except ValueError as e:
+    print(e)
