@@ -32,3 +32,36 @@ else:
     print(f"Final Balance : {obj.get_balance()}")
 
 
+# 🔹 Question 2
+# Write a Python program to:
+# 👉 Create a package named auth
+# Inside create:
+# login.py
+# validator.py
+# In validator.py:
+# Create functions:
+# validate_username(username)
+# length ≥ 5 இல்லனா error
+# validate_password(password)
+# length ≥ 6
+# must contain number
+# In login.py:
+# Create function:
+# login(username, password)
+# Call validation functions
+# If valid → return "Login Success"
+# Else → raise error
+# 👉 In main.py:
+# Take username & password
+# Call login()
+# Handle errors
+# Print result
+
+from auth import login
+try:
+    username = input("Enter username: ")
+    password = input("Enter password: ")
+    result = login.login(username,password)
+    print(result)
+except ValueError as e:
+    print(e)
