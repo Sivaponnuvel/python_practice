@@ -12,3 +12,14 @@ a = json.dumps(person)
 print(a)
 
 
+# 🔹 Question 2
+# 👉 Take a JSON string
+# 👉 Convert it into Python dictionary
+# 👉 Print each value separately
+
+import json
+user = '{"name": "Siva", "age": 23, "city": "Chennai"}'
+a = json.loads(user)
+print(f"Name: {a['name']}")
+print(f"Age: {a['age']}")
+print(f"City: {a['city']}")
