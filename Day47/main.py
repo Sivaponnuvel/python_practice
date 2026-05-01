@@ -35,3 +35,17 @@ for i in user:
     print(f"Name: {i['name']}, Age: {i['age']}")
 
 
+# 🔹 Question 2
+# Write a Python program to:
+# 👉 Read users.json file
+# 👉 Print only users whose age is greater than 20
+# 🧠 Example Output:
+# Siva - 23
+# Ram - 25
+
+import json
+with open("D:/Python/Own try/practice/Day47/users.json","r") as file:
+    read = json.load(file)
+    for i in read:
+        if i["age"] > 20:
+            print(f'{i["name"]} - {i["age"]}')
