@@ -75,3 +75,19 @@ user = input("Enter string: ")
 print(f"Vowels: {vowels(user)}")
 print(f"Consonants: {consonants(user)}")
 print(f"Digits: {digits(user)}")
+
+# method-2
+def count(string):
+    v = c = d = 0
+    for i in string:
+        if i in "aeiouAEIOU":
+            v += 1
+        elif i.isalpha():
+            c += 1
+        elif i.isdigit():
+            d += 1
+    print(f"Vowels: {v}")
+    print(f"Consonants: {c}")
+    print(f"Digits: {d}")
+user1 = input("Enter string: ")
+count(user1)
