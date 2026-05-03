@@ -26,3 +26,20 @@ print(f"Age: {person['age']}")
 print(f"City: {person['city']}")
 
 
+# 🔹 Question 2 – Update & Add Key
+# Write a Python program to:
+# 👉 Create a dictionary:
+# student = {"name": "Siva", "marks": 80}
+# 👉 Do the following:
+# Update marks to new value (user input)
+# Add new key → "grade" (user input)
+# 👉 Print updated dictionary
+# 🧠 Example Output:
+# {'name': 'Siva', 'marks': 90, 'grade': 'A'}
+
+student = {"name": "Siva", "marks": 80}
+new_mark = int(input("Enter marks: "))
+grade = input("Enter grade: ").upper()
+student["marks"] = new_mark
+student["grade"] = grade
+print(student)
