@@ -34,3 +34,27 @@ else:
     print("Student not found ❌")
 
 
+# 🔹 Question 2 – Update Marks
+# 👉 Using same dictionary:
+# Ask user:
+# student name
+# new marks
+# 👉 Do:
+# If student exists → update marks
+# Print updated details
+# If not → print:
+# "Student not found ❌"
+# 🧠 Example Output:
+# Enter name: Ram
+# Enter new marks: 95
+# Updated:
+# Ram - Age: 21, Marks: 95
+
+user1 = input("Enter name: ")
+new_mark = int(input("Enter new marks: "))
+if user1 in students:
+    students[user1]['marks'] = new_mark
+    print("Updated:")
+    print(f"{user1} - Age: {students[user1]['age']}, Marks: {students[user1]['marks']}")
+else:
+    print("Student not found ❌")
