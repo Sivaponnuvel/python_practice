@@ -41,3 +41,26 @@ for key, value in students.items():
     print(f"{key} - Age: {value['age']}, Marks: {value['marks']}")
 
 
+# 🔹 Question 2 – Delete Student
+# 👉 Using same dictionary:
+# Ask user to enter student name to delete
+# 👉 Do:
+# If exists → delete student
+# Print updated list
+# If not → print
+# "Student not found ❌"
+# 🧠 Example Output:
+# Enter name to delete: Ram
+# Updated Students:
+# Siva - 85
+# Arun - 88
+
+
+user = input("Enter student name to delete: ")
+if user in students:
+    del students[user]
+    print("Updated Students: ")
+    for key, value in students.items():
+        print(f"{key} - {value['marks']}")
+else:
+    print("Student not found ❌")
