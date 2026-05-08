@@ -31,3 +31,31 @@ print(f"Total mark: {total_mark}")
 print(f"Average: {average}")
 
 
+# 🔹 Question 2 – Employee Dictionary
+# Write a Python program to:
+# 👉 Take:
+# employee name
+# department
+# salary
+# 👉 Store in dictionary
+# 👉 Print all employee details
+# 👉 Check:
+# If salary > 20000 → print "High Salary ✅"
+# Else → print "Low Salary ❌"
+# Example Output:
+# Name: Siva
+# Department: IT
+# Salary: 25000
+# High Salary ✅
+
+emp_name =  input("Enter employee name: ")
+department = input("Enter employee department: ")
+salary = int(input("Enter employee salary: "))
+employee = {"name": emp_name, "department": department, "salary": salary}
+print(f"Name: {employee['name']}")
+print(f"Department: {employee['department']}")
+print(f"Salary: {employee['salary']}")
+if employee['salary'] > 20000:
+    print("High Salary ✅")
+else:
+    print("Low Salary ❌")
