@@ -40,3 +40,34 @@ for i in products:
 print(f"Cheapest: {cheapest}")
 
 
+# 🔹 Question 2 – Email Validation
+# Write a Python program to:
+# 👉 Create a function:
+# validate_email(email)
+# Rules:
+# email should contain "@"
+# email should contain ".com"
+# 👉 If invalid:
+# raise ValueError
+# 👉 Otherwise:
+# return dictionary:
+# {"email": email}
+# 👉 Take email from user
+# 👉 Handle errors using try-except
+# Example Output:
+# Enter email: siva@gmail.com
+# {'email': 'siva@gmail.com'}
+# OR
+# Error: Invalid email ❌
+
+def validate_email(email):
+    if "@" not in email:
+        raise ValueError("Invalid email ❌")
+    elif ".com" not in email:
+        raise ValueError("Invalid email ❌")
+    return {'email': email}
+try:
+    user = input("Enter email: ")
+    print(validate_email(user))
+except ValueError as e:
+    print(f"Error: {e}")
