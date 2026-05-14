@@ -50,3 +50,30 @@ for i in students:
 print(f"Average Mark: {average_mark/len(students)}")
 
 
+# 🔹 Question 2 – Password Validation
+# Write a Python program to:
+# 👉 Create a function:
+# validate_password(password)
+# Rules:
+# password length should be greater than or equal to 8
+# 👉 If invalid:
+# raise ValueError
+# 👉 Otherwise return:
+# {"password": password}
+# 👉 Take password from user
+# 👉 Handle errors using try-except
+# Example Output:
+# Enter password: abc12345
+# {'password': 'abc12345'}
+# OR
+# Error: Password must contain at least 8 characters ❌
+
+def validate_password(password):
+    if len(password) < 8:
+        raise ValueError("Password must contain at least 8 characters ❌")
+    return {"password": password}
+try:
+    password = input("Enter your password: ")
+    print(validate_password(password))
+except ValueError as e:
+    print(f"Error: {e}")
