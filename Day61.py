@@ -58,3 +58,33 @@ search_name = input("Search User: ")
 find_user(users,search_name)
 
 
+# 🔹 Question 2 – Advanced Password Validation
+# Write a Python program to:
+# 👉 Create a function:
+# validate_password(password)
+# Rules:
+# password length should be greater than or equal to 8
+# password should contain at least one number
+# 👉 If invalid:
+# raise ValueError
+# 👉 Otherwise return:
+# {"password": password}
+# 👉 Take password from user
+# 👉 Handle errors using try-except
+# Example Output:
+# Enter password: siva1234
+# {'password': 'siva1234'}
+# OR
+# Error: Password must contain at least one number ❌
+
+def validate_password(password):
+    if len(password) < 8:
+        raise ValueError("Password too short")
+    elif not any(i.isdigit() for i in password):
+        raise ValueError("Password must contain at least one number ❌")
+    return {'password': password}
+try:
+    password = input("Enter your password: ")
+    print(validate_password(password))
+except ValueError as e:
+    print(f"Error: {e}")
