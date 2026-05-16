@@ -52,3 +52,37 @@ withdraw(account,withdraw_amount)
 print(f"Balance Updated: {check_balance(account)}")
 
 
+# 🔹 Question 2 – Duplicate Name Finder
+# Write a Python program to:
+# 👉 Take 7 names from user and store in list
+# 👉 Find duplicate names manually using loops
+# 👉 Print duplicate names only once
+# Example Input:
+# Siva
+# Ram
+# Arun
+# Siva
+# Ram
+# Kumar
+# Vijay
+# Example Output:
+# Duplicate Names:
+# Siva
+# Ram
+# ⚠️ Conditions:
+# ❌ Do not use set()
+# ❌ Do not use count()
+
+names = []
+for i in range(7):
+    user = input("Enter the name: ")
+    names.append(user)
+name = []
+print("Duplicate Names:")
+for i in range(len(names)):
+    for j in range(i):
+        if names[j] == names[i]:
+            if names[i] not in name:
+                print(names[i])
+                name.append(names[i])
+            break 
