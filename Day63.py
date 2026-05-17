@@ -77,3 +77,36 @@ search_employee(employees,search_id)
 highest_salary(employees)
 
 
+# 🔹 Question 2 – Strong Email Validation
+# Write a Python program to:
+# 👉 Create a function:
+# validate_email(email)
+# Rules:
+# email should contain "@"
+# email should contain ".com"
+# email should not contain spaces
+# 👉 If invalid:
+# raise ValueError
+# 👉 Otherwise return:
+# {"email": email}
+# 👉 Take email from user
+# 👉 Handle errors using try-except
+# Example Output:
+# Enter email: siva@gmail.com
+# {'email': 'siva@gmail.com'}
+# OR
+# Error: Email should not contain spaces ❌
+
+def validate_email(email):
+    if " " in email:
+        raise ValueError('email should not contain spaces ❌')
+    elif "@" not in email:
+        raise ValueError('email should contain "@"')
+    elif ".com" not in email:
+        raise ValueError('email should contain ".com"')
+    return {"email": email}
+try:
+    user = input("Enter your email: ")
+    print(validate_email(user))
+except ValueError as e:
+    print(f"Error: {e}")
