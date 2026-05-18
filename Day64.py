@@ -91,3 +91,33 @@ find_student(students,search_roll)
 top_student(students)
 
 
+# 🔹 Question 2 – Mobile Number Validation
+# Write a Python program to:
+# 👉 Create a function:
+# validate_mobile(number)
+# Rules:
+# mobile number should contain exactly 10 digits
+# mobile number should contain only numbers
+# 👉 If invalid:
+# raise ValueError
+# 👉 Otherwise return:
+# {"mobile": number}
+# 👉 Take mobile number from user
+# 👉 Handle errors using try-except
+# Example Output:
+# Enter mobile number: 9876543210
+# {'mobile': '9876543210'}
+# OR
+# Error: Mobile number must contain exactly 10 digits ❌
+
+def validate_mobile(number):
+    if not number.isdigit():
+        raise ValueError("mobile number should contain only numbers ❌")
+    elif len(number) != 10:
+        raise ValueError("mobile number should contain exactly 10 digits ❌")
+    return {"mobile": number}
+try:
+    user = input("Enter your mobile number: ")
+    print(validate_mobile(user))
+except ValueError as e:
+    print(f"Error: {e}")
