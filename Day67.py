@@ -32,3 +32,40 @@ def hello():
 hello()
 
 
+# 🔹 Question 2 – Login Validation Decorator
+# Write a Python program to:
+# 👉 Create a decorator:
+# login_required(func)
+# 👉 Inside decorator:
+# Take username from user
+# Rules:
+# If username is not "admin":
+# Access Denied ❌
+# Otherwise call original function
+# 👉 Create function:
+# dashboard()
+# 👉 Inside dashboard() print:
+# Welcome to Dashboard ✅
+# 👉 Apply decorator using:
+# @login_required
+# Example Output:
+# Enter username: admin
+# Welcome to Dashboard ✅
+# OR
+# Enter username: siva
+# Access Denied ❌
+
+def login_required(func):
+    def wrapper():
+        username = input("Enter Username: ")
+        if username != "admin":
+            print("Access Denied ❌")
+        else:
+            func()
+    return wrapper
+
+@login_required
+def dashboard():
+    print("Welcome to Dashboard ✅")
+
+dashboard()
