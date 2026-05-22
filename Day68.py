@@ -36,3 +36,39 @@ def numbers():
 numbers()
 
 
+# 🔹 Question 2 – Decorator with Arguments
+# Write a Python program to:
+# 👉 Create a decorator:
+# smart_divide(func)
+# 👉 Create function:
+# divide(a, b)
+# 👉 Rules:
+# If b == 0 :
+# Cannot divide by zero ❌
+# Otherwise call original function
+# 👉 Apply decorator using:
+# @smart_divide
+# 👉 Take two numbers from user
+# 👉 Print division result
+# Example Output:
+# Enter a: 10
+# Enter b: 2
+# Result: 5.0
+# OR
+# Enter a: 10
+# Enter b: 0
+# Cannot divide by zero ❌
+
+def smart_divide(func):
+    def wrapper(a,b):
+        if b == 0:
+            print("Cannot divide by zero ❌")
+        else:
+            return func(a,b)
+    return wrapper
+@smart_divide
+def divide(a,b):
+    print(a/b)
+a = int(input("Enter a: "))
+b = int(input("Enter b: "))
+divide(a,b)
