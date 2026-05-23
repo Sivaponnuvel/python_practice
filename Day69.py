@@ -27,3 +27,28 @@ def greet():
 greet()
 
 
+# 🔹 Question 2 – Uppercase Output Decorator
+# Write a Python program to:
+# 👉 Create a decorator:
+# uppercase_result(func)
+# 👉 Inside decorator:
+# Convert returned string into uppercase
+# 👉 Create function:
+# message()
+# 👉 Inside function return:
+# "hello fastapi"
+# 👉 Apply decorator using:
+# @uppercase_result
+# 👉 Print final result
+# Example Output:
+# HELLO FASTAPI
+
+def uppercase_result(func):
+    def wrapper():
+        return func().upper()
+    return wrapper
+
+@uppercase_result
+def message():
+    return "hello fastapi"
+print(message())
