@@ -38,3 +38,39 @@ b = int(input("Enter b: "))
 add_numbers(a,b)
 
 
+# 🔹 Question 2 – Decorator for Function Call Counter
+# Write a Python program to:
+# 👉 Create a decorator:
+# count_calls(func)
+# 👉 Inside decorator:
+# Count how many times function is called
+# 👉 Create function:
+# say_hello()
+# 👉 Inside function print:
+# Hello User
+# 👉 Apply decorator using:
+# @count_calls
+# 👉 Call function 3 times
+# 👉 Every time print function call count
+# Example Output:
+# Hello User
+# Function called 1 times
+# Hello User
+# Function called 2 times
+# Hello User
+# Function called 3 times
+
+def count_calls(func):
+    count_calls.count = 0
+    def wrapper():
+        count_calls.count += 1
+        func()
+        print(f"Function called {count_calls.count} times")
+    return wrapper
+
+@count_calls
+def say_hello():
+    print("Hello User")
+say_hello()
+say_hello()
+say_hello()
