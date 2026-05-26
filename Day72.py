@@ -36,3 +36,44 @@ def delete_user():
 delete_user()
 
 
+# 🔹 Question 2 – Decorator Chain Practice
+# Write a Python program to:
+# 👉 Create 2 decorators:
+# star_decorator(func)
+# hash_decorator(func)
+# 👉 star_decorator should print:
+# **********
+# before and after function execution
+# 👉 hash_decorator should print:
+# ##########
+# before and after function execution
+# 👉 Create function:
+# show_message()
+# 👉 Inside function print:
+# Decorator Chaining
+# 👉 Apply both decorators
+# Example Output:
+# **********
+# ##########
+# Decorator Chaining
+# ##########
+# **********
+
+def star_decorator(func):
+    def wrapper():
+        print("**********")
+        func()
+        print("**********")
+    return wrapper
+def hash_decorator(func):
+    def wrapper():
+        print("##########")
+        func()
+        print("##########")
+    return wrapper
+
+@star_decorator
+@hash_decorator
+def show_message():
+    print("Decorator Chaining")
+show_message()
