@@ -1,0 +1,3 @@
+Python is easy
+Python framework - Flask
+FastAPI is powerful
