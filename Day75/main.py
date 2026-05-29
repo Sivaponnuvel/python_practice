@@ -50,3 +50,68 @@ else:
     print("User not found ❌")
 
 
+# 🔹 Question 2 – OOP Library Book System
+# Write a Python program to:
+# 👉 Create a class:
+# Book
+# 👉 Constructor should take:
+# title
+# author
+# available_copies
+# 👉 Create methods:
+# borrow_book()
+# return_book()
+# show_details()
+# 👉 Rules:
+# ✅ borrow_book()
+# If copies available → reduce by 1
+# Otherwise print:
+# Book not available ❌
+# ✅ return_book()
+# Increase copies by 1
+# ✅ show_details()
+# Print all book details
+# 👉 Create object using user input
+# 👉 Perform:
+# show details
+# borrow book
+# return book
+# show details again
+# Example Output:
+# Title: Python Basics
+# Author: ABC
+# Available Copies: 2
+# Book Borrowed ✅
+# Available Copies: 1
+
+class Book:
+    def __init__(self, title, author, available_copies):
+        self.__title = title
+        self.__author = author
+        self.__available_copies = available_copies
+    def borrow_book(self):
+        if self.__available_copies > 0:
+            self.__available_copies -= 1
+            print("Book Borrowed ✅")
+        else:
+            print("Book not available ❌")
+    def return_book(self):
+        self.__available_copies += 1
+        print("Book Returned ✅")
+    def show_details(self):
+        print("---Book Details---")
+        print(f"Title: {self.__title}")
+        print(f"Author: {self.__author}")
+        print(f"Available Copies: {self.__available_copies}")
+
+title = input("Enter Book Title: ")
+author = input("Enter Author Name: ")
+available_copies = int(input("Enter Available Copies: "))
+
+book = Book(title, author, available_copies)
+
+book.show_details()
+book.borrow_book()
+book.show_details()
+book.return_book()
+book.show_details()
