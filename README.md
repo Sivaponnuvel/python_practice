@@ -81,6 +81,7 @@ I am consistently improving my problem-solving and programming skills by practic
 * Day72 – Completed ✅
 * Day73 – Completed ✅
 * Day74 – Completed ✅
+* Day75 – Completed ✅
 
 ---
 
