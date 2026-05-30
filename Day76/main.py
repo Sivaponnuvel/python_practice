@@ -46,3 +46,30 @@ except InsufficientBalanceError as e:
     print(e)
 
 
+# 🔹 Question 2 – Module Based String Utility System
+# Write a Python program using custom modules:
+# 👉 Create file:
+# string_utils.py
+# 👉 Inside file create functions:
+# reverse_text(text)
+# count_vowels(text)
+# 👉 reverse_text() should manually reverse string using loops
+# ❌ Do not use slicing [::-1]
+# 👉 count_vowels() should count vowels manually using loops
+# 👉 Create another file:
+# main.py
+# 👉 Import functions from module
+# 👉 Take string input from user
+# 👉 Print:
+# Reversed text
+# Total vowels
+# Example Output:
+# Enter text: FastAPI
+# Reversed: IPAtsaF
+# Vowels Count: 3
+
+import string_utils as s
+
+text = input("Enter text: ")
+print(f"Reversed: {s.reverse_text(text)}")
+print(f"Vowels Count: {s.count_vowels(text)}")
