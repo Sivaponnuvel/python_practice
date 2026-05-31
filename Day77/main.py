@@ -80,3 +80,52 @@ add_task("Frontend")
 view_tasks()
 
 
+# 🔹 Question 2 – OOP Inheritance Practice
+# Write a Python program to:
+# 👉 Create parent class:
+# Person
+# 👉 Constructor should take:
+# name
+# age
+# 👉 Create method:
+# show_person()
+# 👉 Create child class:
+# Student(Person)
+# 👉 Constructor should additionally take:
+# course
+# 👉 Create method:
+# show_student()
+# 👉 Print:
+# Name
+# Age
+# Course
+# 👉 Create object using user input
+# 👉 Call both methods
+# Example Output:
+# Enter Name: Siva
+# Enter Age: 23
+# Enter Course: FastAPI
+# Name: Siva
+# Age: 23
+# Course: FastAPI
+
+class Person:
+    def __init__(self, name, age):
+        self.__name = name
+        self.__age = age
+    def show_person(self):
+        print(f"Name: {self.__name}")
+        print(f"Age: {self.__age}")
+class Student(Person):
+    def __init__(self, name, age, course):
+        super().__init__(name, age)
+        self.__course = course
+    def show_student(self):
+        print(f"Course: {self.__course}")
+
+name = input("Enter Name: ")
+age = int(input("Enter Age: "))
+course = input("Enter Course: ")
+user = Student(name, age, course)
+user.show_person()
+user.show_student()
