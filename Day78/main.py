@@ -67,3 +67,53 @@ highest_salary(employees)
 salary_above_25000(employees)
 
 
+# 🔹 Question 2 – Exception Handling + File Logging
+# Write a Python program to:
+# 👉 Create a file:
+# error_log.txt
+# 👉 Take two numbers from user
+# 👉 Perform division
+# 👉 Rules:
+# If division successful:
+# Append into file:
+# Division Successful
+# If division by zero:
+# Append into file:
+# Cannot divide by zero
+# If invalid number entered:
+# Append into file:
+# Invalid Number
+# 👉 Use:
+# try-except
+# 👉 Finally print:
+# Operation Logged ✅
+# Example Output:
+# Enter a: 10
+# Enter b: 2
+# Result: 5.0
+# Operation Logged ✅
+# OR
+# Enter a: 10
+# Enter b: 0
+# Cannot divide by zero ❌
+# Operation Logged ✅
+
+file_path = "D:/Backend/Python/Own try/practice/Day78/error_log.txt"
+try:
+    a = int(input("Enter a: "))
+    b = int(input("Enter b: "))
+    result = a / b
+except ZeroDivisionError:
+    print("Cannot divide by zero ❌")
+    with open(file_path,"a") as file:
+        file.write("Cannot divide by zero \n")
+except ValueError:
+    print("Invalid Number ❌")
+    with open(file_path,"a") as file:
+        file.write("Invalid Number \n")
+else:
+    print(f"Result: {result}")
+    with open(file_path,"a") as file:
+        file.write("Division Successful \n")
+finally:
+    print("Operation Logged ✅")
