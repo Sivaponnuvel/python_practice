@@ -61,3 +61,50 @@ for i in read:
     print(f"Department: {i['department']}")
 
 
+# 🔹 Question 2 – Custom Exception + Modules
+# Write a Python program using custom modules.
+# 👉 Create file:
+# bank_utils.py
+# 👉 Create custom exception:
+# InvalidAmountError
+# 👉 Create function:
+# withdraw(balance, amount)
+# Rules:
+# ✅ If amount <= 0
+# Raise:
+# InvalidAmountError
+# ✅ If amount > balance
+# Print:
+# Insufficient Balance ❌
+# ✅ Otherwise return remaining balance
+# 👉 Create another file:
+# main.py
+# 👉 Import from module
+# 👉 Take:
+# balance
+# withdraw amount
+# 👉 Handle exception using:
+# try-except
+# Example Output:
+# Enter Balance: 5000
+# Enter Amount: 2000
+# Remaining Balance: 3000
+# OR
+# Enter Balance: 5000
+# Enter Amount: -100
+# Invalid Amount ❌
+# OR
+# Enter Balance: 5000
+# Enter Amount: 7000
+# Insufficient Balance ❌
+
+import bank_utils as b
+
+try:
+    balance = int(input("Enter Balance: "))
+    amount = int(input("Enter Amount: "))
+    result = b.withdraw(balance, amount)
+    if result is not None:
+        print(f"Remaining Balance: {result}")
+except b.InvalidAmountError as e:
+    print(e)
