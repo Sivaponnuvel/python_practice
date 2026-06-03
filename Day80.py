@@ -41,3 +41,59 @@ quantity = int(input("Enter Quantity: "))
 print(f"Total Amount: {calculate_total(price, quantity)}")
 
 
+# 🔹 Question 2 – Exception Handling + Multiple Exceptions
+# Write a Python program to:
+# 👉 Take two numbers from user
+# 👉 Take an index number from user
+# 👉 Store the two numbers inside a list
+# Example:
+# [10, 20]
+# 👉 Print:
+# Division Result = first_number / second_number
+# 👉 Then print:
+# Value at given index
+# Handle Exceptions:
+# ✅ If second number is 0:
+# Cannot divide by zero ❌
+# ✅ If user enters invalid number:
+# Invalid Number ❌
+# ✅ If index is out of range:
+# Index Out of Range ❌
+# Example Output:
+# Enter First Number: 10
+# Enter Second Number: 2
+# Enter Index: 1
+# Division Result: 5.0
+# Value: 20
+# OR
+# Enter First Number: 10
+# Enter Second Number: 0
+# Cannot divide by zero ❌
+# OR
+# Enter First Number: 10
+# Enter Second Number: 2
+# Enter Index: 5
+# Index Out of Range ❌
+# ⚠️ Conditions:
+# ✅ Use one try block
+# ✅ Handle multiple exceptions separately
+# ✅ Use list indexing
+
+numbers = []
+try:    
+    a = int(input("Enter First Number: "))
+    b = int(input("Enter Second Number: "))
+    numbers.append(a)
+    numbers.append(b)
+    index = int(input("Enter Index: "))
+    result = a / b
+    value = numbers[index]    
+except ZeroDivisionError:
+    print("Cannot divide by zero ❌")
+except ValueError:
+    print("Invalid Number ❌")
+except IndexError:
+    print("Index Out of Range ❌")
+else:
+    print(f"Division Result: {result}")
+    print(f"Value: {value}")
