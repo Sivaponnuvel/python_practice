@@ -87,3 +87,51 @@ quantity = int(input("Enter Quantity: "))
 update_stock(product_id, quantity)
 
 
+# 🔹 Question 2 – Custom Exception for Age Validation
+# Write a Python program to:
+# 👉 Create custom exception:
+# InvalidAgeError
+# 👉 Create function:
+# register_user(name, age)
+# 👉 Rules:
+# If age is less than 18:
+# Raise:
+# InvalidAgeError
+# Message:
+# Age must be 18 or above ❌
+# Otherwise return:
+# {
+#     "name": name,
+#     "age": age
+# }
+# 👉 Take input from user
+# 👉 Handle exception using:
+# try-except
+# Example Output:
+# Enter Name: Siva
+# Enter Age: 23
+# {'name': 'Siva', 'age': 23}
+# OR
+# Enter Name: Ram
+# Enter Age: 15
+# Age must be 18 or above ❌
+# ⚠️ Conditions:
+# ✅ Create custom exception class
+# ✅ Use raise
+# ✅ Use try-except
+
+class InvalidAgeError(Exception):
+    pass
+
+def register_user(name, age):
+    if age < 18:
+        raise InvalidAgeError("Age must be 18 or above ❌")
+    else:
+        return {"name": name, "age": age}
+    
+try:
+    name = input("Enter Name: ")
+    age = int(input("Enter Age: "))
+    print(register_user(name, age))
+except InvalidAgeError as e:
+    print(e)
