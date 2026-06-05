@@ -47,3 +47,70 @@ with open("D:/Backend/Python/Own try/practice/Day82/report.txt", "w")as file:
 print("Report saved to report.txt")
 
 
+# 🔹 Question 2 – Functions: Number Statistics System
+# Write a Python program to:
+# 👉 Create a function:
+# analyze_numbers(numbers)
+# 👉 Function should calculate:
+# Total Sum
+# Average
+# Largest Number
+# Smallest Number
+# 👉 Return result as dictionary
+# Example:
+# {
+#     "sum": 150,
+#     "average": 30.0,
+#     "largest": 50,
+#     "smallest": 10
+# }
+# 👉 Take 5 numbers from user
+# 👉 Store inside a list
+# 👉 Call function
+# 👉 Print all returned values
+# Example Output:
+# Enter Number: 10
+# Enter Number: 20
+# Enter Number: 30
+# Enter Number: 40
+# Enter Number: 50
+# Sum: 150
+# Average: 30.0
+# Largest: 50
+# Smallest: 10
+# ⚠️ Conditions:
+# ✅ Use functions
+# ✅ Return dictionary
+# ✅ Use loops
+# ❌ Do not use sum()
+# ❌ Do not use max()
+# ❌ Do not use min()
+
+def analyze_numbers(numbers):
+    # Total sum
+    sum_num = 0
+    for i in numbers:
+        sum_num += i
+    # Average
+    avg = sum_num / len(numbers)
+    # Largest
+    largest_num = numbers[0]
+    for i in numbers:
+        if i > largest_num:
+            largest_num = i
+    # Smallest
+    smallest_num = numbers[0]
+    for i in numbers:
+        if i < smallest_num:
+            smallest_num = i
+    return {"sum": sum_num, "average": avg, "largest": largest_num, "smallest": smallest_num}
+
+numbers = []
+for i in range(5):
+    number = int(input("Enter Number: "))
+    numbers.append(number)
+
+result = analyze_numbers(numbers)
+
+for key, value in result.items():
+    print(f"{key.capitalize()}: {value}")
