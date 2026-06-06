@@ -40,3 +40,84 @@ print(f"Cube: {math_utils.cube(number)}")
 print(f"Factorial: {math_utils.factorial(number)}")
 
 
+# 🔹 Question 2 – OOP: Shopping Cart System
+# Create a class:
+# ShoppingCart
+# Constructor
+# Should create an empty list:
+# self.items = []
+# Methods
+# add_item(item_name)
+# Add item into cart
+# Example:
+# cart.add_item("Laptop")
+# remove_item(item_name)
+# Remove item if exists
+# Otherwise print:
+# Item Not Found ❌
+# view_cart()
+# Print all items
+# Example:
+# --- Cart Items ---
+# Laptop
+# Mouse
+# Keyboard
+# If cart is empty:
+# Cart is Empty ❌
+# Program Flow
+# 👉 Create object
+# 👉 Add 3 items using user input
+# 👉 View cart
+# 👉 Ask item name to remove
+# 👉
+# Remove item
+# 👉 
+# View cart again
+# Example Output
+# Enter Item: Laptop
+# Enter Item: Mouse
+# Enter Item: Keyboard
+# --- Cart Items ---
+# Laptop
+# Mouse
+# Keyboard
+# Enter Item To Remove: Mouse
+# Item Removed ✅
+# --- Cart Items ---
+# Laptop
+# Keyboard
+# ⚠️ Conditions:
+# ✅ Use class
+# ✅ Use methods
+# ✅ Use list inside class
+# ✅ No dictionaries needed
+
+class ShoppingCart:
+    def __init__(self):
+        self.items = []
+    def add_item(self, item_name):
+        self.items.append(item_name)
+    def remove_item(self, item_name):
+        if item_name in self.items:
+            self.items.remove(item_name)
+            print("Item Removed ✅")
+        else:
+            print("Item Not Found ❌")
+    def view_cart(self):
+        if not self.items:
+            print("Cart is Empty ❌")
+            return
+        print("--- Cart Items ---")
+        for i in self.items:
+            print(i)
+cart = ShoppingCart()
+for i in range(3):
+    item = input("Enter Item: ")
+    cart.add_item(item)
+
+cart.view_cart()
+
+remove = input("Enter Item to Remove: ")
+cart.remove_item(remove)
+
+cart.view_cart()
