@@ -50,3 +50,64 @@ con.commit()
 
 
 
+# 🔹 Question 2 – Insert and View Students
+# Using the same database:
+# student_db
+# and table:
+# students
+# 👉 Take details for 3 students from user
+# Input:
+# Name
+# Age
+# 👉 Insert records into database
+# 👉 After insertion print:
+# Student Added Successfully ✅
+# 👉 Fetch all student records
+# 👉 Display them like:
+# Example Output
+# Enter Name: Siva
+# Enter Age: 23
+# Enter Name: Ram
+# Enter Age: 21
+# Enter Name: Arun
+# Enter Age: 22
+# Student Added Successfully ✅
+# --- Student Records ---
+# ID: 1
+# Name: Siva
+# Age: 23
+# ID: 2
+# Name: Ram
+# Age: 21
+# ID: 3
+# Name: Arun
+# Age: 22
+# ⚠️ Conditions:
+# ✅ Use:
+# cursor.execute(
+#     "INSERT INTO students(name, age) VALUES (%s, %s)",
+#     (name, age)
+# )
+# ✅ Use loop
+# ✅ Use SELECT * FROM students
+# ❌ Do not manually enter ID
+
+
+for i in range(3):
+    name = input("Enter Name: ")
+    age = int(input("Enter Age: "))
+    cursor.execute("insert into students(name,age) values (%s, %s)",(name,age))
+print("Student Added Successfully ✅")
+
+cursor.execute("select * from students")
+details = cursor.fetchall()
+
+print("--- Student Records ---")
+for i in details:
+    print(f"ID: {i[0]}")
+    print(f"Name: {i[1]}")
+    print(f"Age: {i[2]}")
+
+con.commit()
+cursor.close()
+con.close()
