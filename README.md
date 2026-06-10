@@ -93,6 +93,7 @@ I am consistently improving my problem-solving and programming skills by practic
 * Day84 – Completed ✅
 * Day85 – Completed ✅
 * Day86 – Completed ✅
+* Day87 – Completed ✅
 
 ---
 
