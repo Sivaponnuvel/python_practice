@@ -55,3 +55,53 @@ else:
     print("Student Not Found ❌")
 
 
+# 🔹 Question 2 – Search Students by Name (LIKE)
+# Using the same table:
+# students
+# Write a Python program to:
+# 👉 Take a name keyword from user
+# Example:
+# Enter Name Keyword: si
+# 👉 Search using:
+# SELECT * FROM students
+# WHERE name LIKE %s
+# 👉 Use:
+# ("%" + keyword + "%",)
+# 👉 Display all matching students.
+# Example:
+# If database contains:
+# Siva
+# Sivakumar
+# Ram
+# Output:
+# Matching Students:
+# ID: 1
+# Name: Siva
+# Age: 23
+# ID: 4
+# Name: Sivakumar
+# Age: 25
+# 👉 If no records found:
+# No Matching Students ❌
+# ⚠️ Conditions
+# ✅ Use LIKE
+# ✅ Use fetchall()
+# ✅ Use loop to display records
+# ❌ Don't search manually in Python
+# ❌ Let MySQL perform the search
+
+keyword = input("Enter Name Keyword: ")
+cursor.execute("select * from students where name like %s",("%" + keyword + "%",))
+details = cursor.fetchall()
+
+if details:
+    print("Matching Students:")
+    for i in details:
+        print(f"ID: {i[0]}")
+        print(f"Name: {i[1]}")
+        print(f"Age: {i[2]}")
+else:
+    print("No Matching Students ❌")
+
+cursor.close()
+con.close()
