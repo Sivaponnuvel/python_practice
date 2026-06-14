@@ -53,3 +53,32 @@ else:
     print("No Matching Students ❌")
 
 
+# 🔹 Question 2 – Count Total Students
+# Using table:
+# students
+# Write a Python program to:
+# 👉 Count total students using MySQL
+# Query:
+# SELECT COUNT(*) FROM students
+# 👉 Display result
+# Example Output:
+# Total Students: 5
+# Hint
+# COUNT(*) returns one row and one column.
+# You can use:
+# result = cursor.fetchone()
+# Then access count using:
+# result[0]
+# ⚠️ Conditions
+# ✅ Use COUNT(*)
+# ✅ Use fetchone()
+# ✅ Let MySQL calculate count
+# ❌ Don't count records using Python loops
+
+cursor.execute("select count(*) from students")
+result = cursor.fetchone()
+
+print(f"Total Students: {result[0]}")
+
+cursor.close()
+con.close()
