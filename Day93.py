@@ -23,3 +23,23 @@ def generate_numbers():
 generate_numbers()
 
 
+# Question 2 – Exception Handling
+# Create custom exception:
+# PasswordTooShortError
+# Create function:
+# register(password)
+# Rules:
+# less than 8 chars → raise exception
+# otherwise print Registration Successful
+
+class PasswordTooShortError(Exception):
+    pass
+def register(password):
+    if len(password) < 8 :
+        raise PasswordTooShortError("Password Too Short ❌")
+    return "Registration Successful ✅"
+try:
+    password = input("Enter Password: ")
+    print(register(password))
+except PasswordTooShortError as e:
+    print(e)
