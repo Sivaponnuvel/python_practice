@@ -61,3 +61,59 @@ print(f"Name: {oldest[1]}")
 print(f"Age: {oldest[2]}")
 
 
+# 🔹 Question 2 – Display Top N Students (LIMIT)
+# Using table:
+# students
+# Write a Python program to:
+# 👉 Take a number from user
+# Enter Limit: 3
+# 👉 Fetch only that many students
+# Query:
+# SELECT * FROM students
+# LIMIT %s
+# 👉 Display records
+# Example:
+# Top 3 Students:
+# ID: 1
+# Name: Siva
+# Age: 23
+# ID: 2
+# Name: Ram
+# Age: 21
+# ID: 3
+# Name: Arun
+# Age: 22
+# 👉 If table is empty:
+# No Students Found ❌
+# ⚠️ Conditions
+# ✅ Use LIMIT
+# ✅ Use parameterized query
+# ✅ Use fetchall()
+# ✅ Display using loop
+# ❌ Don't fetch all records and slice in Python
+# ❌ Let MySQL handle the limit
+# Example Output
+# Enter Limit: 2
+# Top 2 Students:
+# ID: 1
+# Name: Siva
+# Age: 23
+# ID: 2
+# Name: Ram
+# Age: 21
+
+limit =  int(input("Enter Limit: "))
+cursor.execute("select * from students limit %s",(limit,))
+details = cursor.fetchall()
+
+if details:
+    print(f"Top {limit} Students:")
+    for i in details:
+        print(f"ID: {i[0]}")
+        print(f"Name: {i[1]}")
+        print(f"Age: {i[2]}")
+else:
+    print("No Students Found ❌")
+
+cursor.close()
+con.close()
