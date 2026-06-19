@@ -47,3 +47,40 @@ else:
 print(f"Masked Password: {p.mask_password(password)}")
 
 
+# 🔹 Question 2 – Decorator with Arguments
+# Create a decorator:
+# repeat(times)
+# This decorator should accept a number.
+# Create function:
+# greet(name)
+# Print:
+# Hello Siva
+# Apply decorator:
+# @repeat(3)
+# def greet(name):
+#     ...
+# Example Output
+# Enter Name: Siva
+# Hello Siva
+# Hello Siva
+# Hello Siva
+# Conditions
+# ✅ Decorator should accept arguments
+# ✅ Function should accept arguments
+# ✅ Use nested functions properly
+# ❌ Don't use global variables
+
+def repeat(times):
+    def decorator(func):
+        def wrapper(name):
+            for _ in range(times):
+                func(name)
+        return wrapper
+    return decorator
+
+@repeat(3)
+def greet(name):
+    print(f"Hello {name}")
+
+name = input("Enter Name: ")
+greet(name)
