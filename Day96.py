@@ -39,3 +39,46 @@ detail = cursor.fetchone()
 print(f"Total Age: {detail[0]}")
 
 
+# 🔹 Question 2 – Display Unique Ages (DISTINCT)
+# Using table:
+# students
+# Write a Python program to:
+# 👉 Fetch all unique ages from the table
+# Query:
+# SELECT DISTINCT age FROM students
+# 👉 Display ages one by one
+# Example
+# If table contains:
+# Name	Age
+# Siva	23
+# Ram	21
+# Arun	23
+# Vijay	21
+# Karthik	25
+# Output:
+# Unique Ages:
+# 23
+# 21
+# 25
+# Conditions
+# ✅ Use DISTINCT
+# ✅ Use fetchall()
+# ✅ Use loop to display results
+# ❌ Don't remove duplicates using Python
+# ❌ Let MySQL handle uniqueness
+# Example Output
+# Unique Ages:
+# 20
+# 21
+# 23
+# 25
+
+cursor.execute("select distinct age from students")
+details = cursor.fetchall()
+
+print("Unique Ages:")
+for i in details:
+    print(i[0])
+
+cursor.close()
+con.close()
