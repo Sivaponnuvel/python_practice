@@ -30,3 +30,53 @@ for j in generate_even_numbers(limit):
     print(j)
 
 
+# 🔹 Question 2 – OOP: Class Method for Student Count
+# Create a class:
+# Student
+# Constructor
+# Should take:
+# name
+# Class Variable
+# total_students = 0
+# Rules
+# Whenever an object is created:
+# Student("Siva")
+# Increase:
+# total_students
+# by 1
+# Create Class Method
+# show_count()
+# Print:
+# Total Students: 3
+# Program Flow
+# 👉 Create 3 students using user input
+# 👉 Call:
+# Student.show_count()
+# Example Output
+# Enter Name: Siva
+# Enter Name: Ram
+# Enter Name: Arun
+# Total Students: 3
+# Conditions
+# ✅ Use @classmethod
+# ✅ Use class variable
+# ✅ Access class variable using cls
+# ❌ Don't use global variables
+# ❌ Don't manually count objects outside class
+
+class Student:
+    total_students = 0
+    def __init__(self, name):
+        self.name = name
+        Student.total_students += 1
+    
+    @classmethod
+    def show_count(cls):
+        print(f"Total Students: {cls.total_students}")
+
+students = []
+for i in range(3):
+    name = input("Enter Name: ")
+    students.append(Student(name))
+
+Student.show_count()
