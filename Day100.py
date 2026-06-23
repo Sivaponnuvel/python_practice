@@ -41,3 +41,48 @@ detail = cursor.fetchone()
 print(f"Students Above Age {age}: {detail[0]}")
 
 
+# 🔹 Question 2 – Group Students by Age
+# Using table:
+# students
+# Write a Python program to:
+# 👉 Display how many students belong to each age.
+# Query:
+# SELECT age, COUNT(*)
+# FROM students
+# GROUP BY age
+# Example
+# If table contains:
+# Name	Age
+# Siva	23
+# Ram	21
+# Arun	23
+# Vijay	21
+# Karthik	25
+# Output:
+# Age Wise Student Count:
+# Age 21 : 2 Student(s)
+# Age 23 : 2 Student(s)
+# Age 25 : 1 Student(s)
+# ⚠️ Conditions
+# ✅ Use GROUP BY
+# ✅ Use COUNT(*)
+# ✅ Use fetchall()
+# ✅ Display using loop
+# ❌ Don't group records in Python dictionary
+# ❌ Let MySQL perform grouping
+# Example Output
+# Enter Age: 22
+# Students Above Age 22: 2
+# Age Wise Student Count:
+# Age 21 : 2 Student(s)
+# Age 23 : 2 Student(s)
+# Age 25 : 1 Student(s)
+
+cursor.execute("select age,count(*) from students group by age")
+details = cursor.fetchall()
+
+for i in details:
+    print(f"Age {i[0]} : {i[1]} Student(s)")
+
+cursor.close()
+con.close()
