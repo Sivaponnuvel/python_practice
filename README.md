@@ -107,6 +107,7 @@ I am consistently improving my problem-solving and programming skills by practic
 * Day98 – Completed ✅
 * Day99 – Completed ✅
 * Day100 – Completed ✅
+* Day101 – Completed ✅
 
 ---
 
