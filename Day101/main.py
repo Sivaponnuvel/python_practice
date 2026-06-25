@@ -68,3 +68,52 @@ emp_id = int(input("Enter Employee ID: "))
 search_employee(emp_id)
 
 
+# 🔹 Question 2 – Custom Exception: Email Validation
+# Create custom exception:
+# InvalidEmailError
+# Create function:
+# validate_email(email)
+# Rules
+# Valid email must contain:
+# @
+# and
+# .com
+# If invalid:
+# Raise:
+# Invalid Email ❌
+# If valid:
+# Return:
+# Email Verified ✅
+# Example 1
+# Enter Email: siva@gmail.com
+# Email Verified ✅
+# Example 2
+# Enter Email: sivagmail.com
+# Invalid Email ❌
+# Example 3
+# Enter Email: siva@yahoo
+# Invalid Email ❌
+# ⚠️ Conditions
+# ✅ Create custom exception
+# ✅ Use raise
+# ✅ Use try-except
+# ✅ Create separate validation function
+# ❌ Don't use regex
+# ❌ Don't use external libraries
+
+class InvalidEmailError(Exception):
+    pass
+
+def validate_email(email):
+    if "@" not in email:
+        raise InvalidEmailError("Invalid Email ❌")
+    elif ".com" not in email:
+        raise InvalidEmailError("Invalid Email ❌")
+    else:
+        return "Email Verified ✅"
+    
+try:
+    email = input("Enter Email: ")
+    print(validate_email(email))
+except InvalidEmailError as e:
+    print(e)
