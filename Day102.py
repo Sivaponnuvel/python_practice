@@ -59,3 +59,48 @@ else:
     print("No Students Found ❌")
 
 
+# 🔹 Question 2 – Count Students in Each Age Group Having More Than One Student
+# Using table:
+# students
+# Write a Python program to:
+# 👉 Display only ages that have more than one student.
+# Query
+# SELECT age, COUNT(*)
+# FROM students
+# GROUP BY age
+# HAVING COUNT(*) > 1
+# Example
+# Table:
+# Name	Age
+# Siva	23
+# Ram	21
+# Arun	23
+# Vijay	21
+# Karthik	25
+# Output:
+# Age Groups With More Than One Student:
+# Age 21 : 2 Student(s)
+# Age 23 : 2 Student(s)
+# Age 25 should not appear because only one student belongs to that age.
+# If no matching groups
+# No Matching Age Groups ❌
+# ⚠️ Conditions
+# ✅ Use GROUP BY
+# ✅ Use HAVING
+# ✅ Use COUNT(*)
+# ✅ Use fetchall()
+# ❌ Don't filter groups using Python
+# ❌ Let MySQL perform the grouping and filtering
+
+cursor.execute("select age, count(*) from students group by age having count(*) > 1")
+details = cursor.fetchall()
+
+if details:
+    print("Age Groups With More Than One Student:") 
+    for i in details:
+        print(f"Age {i[0]} : {i[1]} Student(s)")
+else:
+    print("No Matching Age Groups ❌")
+
+cursor.close()
+con.close()
