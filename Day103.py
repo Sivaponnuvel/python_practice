@@ -69,3 +69,72 @@ for _ in range(3):
     login(username, password)
 
 
+# 🔹 Question 2 – Lambda Functions: Product Price Sorting
+# Write a Python program to:
+# Create the following list:
+# products = [
+#     ("Laptop", 55000),
+#     ("Mouse", 700),
+#     ("Keyboard", 1500),
+#     ("Monitor", 12000),
+#     ("Headset", 2500)
+# ]
+# Display a menu:
+# 1. Sort Price (Low to High)
+# 2. Sort Price (High to Low)
+# Take choice from user.
+# If user enters:
+# 1
+# Sort using:
+# lambda
+# Output:
+# Products Sorted (Low to High)
+# Mouse - 700
+# Keyboard - 1500
+# Headset - 2500
+# Monitor - 12000
+# Laptop - 55000
+# If user enters:
+# 2
+# Output:
+# Products Sorted (High to Low)
+# Laptop - 55000
+# Monitor - 12000
+# Headset - 2500
+# Keyboard - 1500
+# Mouse - 700
+# If user enters any other value:
+# Invalid Choice ❌
+# ⚠️ Conditions
+# ✅ Use sorted()
+# ✅ Use lambda
+# ✅ Don't create a separate sorting function
+# ✅ Display results using a loop
+# ❌ Don't use list.sort()
+# ❌ Don't manually compare prices using loops
+
+products = [
+    ("Laptop", 55000),
+    ("Mouse", 700),
+    ("Keyboard", 1500),
+    ("Monitor", 12000),
+    ("Headset", 2500)
+]
+
+print("1. Sort Price (Low to High)")
+print("2. Sort Price (High to Low)")
+
+choice = int(input("Enter your choice: "))
+
+if choice == 1:
+    sorted_products = sorted(products, key=lambda product: product[1])
+    print("Products Sorted (Low to High)")
+    for name, price in sorted_products:
+        print(f"{name} - {price}")
+elif choice == 2:
+    sorted_products = sorted(products, key=lambda product: product[1], reverse=True)
+    print("Products Sorted (High to Low)")
+    for name, price in sorted_products:
+        print(f"{name} - {price}")
+else:
+    print("Invalid Choice ❌")
