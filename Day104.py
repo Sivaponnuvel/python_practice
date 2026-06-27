@@ -56,3 +56,58 @@ else:
     print("Student Not Found ❌")
 
 
+# 🔹 Question 2 – Display Students Within an ID Range
+# Using table:
+# students
+# Write a Python program to:
+# 👉 Take:
+# Starting ID
+# Ending ID
+# Search using:
+# SELECT *
+# FROM students
+# WHERE id BETWEEN %s AND %s
+# ORDER BY id ASC
+# Display all matching students.
+# If no records exist:
+# No Students Found ❌
+# Example Output
+# Enter Start ID: 2
+# Enter End ID: 5
+# Students Found:
+# ID: 2
+# Name: Ram
+# Age: 21
+# ID: 3
+# Name: Arun
+# Age: 22
+# ID: 4
+# Name: Vijay
+# Age: 24
+# ID: 5
+# Name: Karthik
+# Age: 25
+# ⚠️ Conditions
+# ✅ Use BETWEEN
+# ✅ Use ORDER BY
+# ✅ Use fetchall()
+# ✅ Use parameterized query
+# ❌ Don't filter IDs in Python
+# ❌ Don't sort using Python
+
+start_id = int(input("Enter Start ID: "))
+end_id = int(input("Enter End ID: "))
+cursor.execute("select * from students where id between %s and %s order by id asc",(start_id, end_id))
+details = cursor.fetchall()
+
+if details:
+    print("Students Found:")
+    for i in details:
+        print(f"ID: {i[0]}")
+        print(f"Name: {i[1]}")
+        print(f"Age: {i[2]}")
+else:
+    print("No Students Found ❌")
+
+cursor.close()
+con.close()
