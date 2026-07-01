@@ -62,3 +62,49 @@ except InvalidAmountError as e:
     print(e)
 
 
+# 🔹 Question 2 – Interview Style: Find the First Non-Repeating Character
+# Write a Python program to find the first non-repeating character in a string.
+# Example 1
+# Input:
+# Enter String: swiss
+# Output:
+# First Non-Repeating Character: w
+# Explanation:
+# s → repeated
+# w → appears once ✅
+# i → appears once
+# The answer is w because it is the first character that appears only once.
+# Example 2
+# Input:
+# Enter String: aabbcc
+# Output:
+# No Non-Repeating Character ❌
+# Example 3
+# Input:
+# Enter String: success
+# Output:
+# First Non-Repeating Character: u
+# ⚠️ Conditions
+# ✅ Use loops.
+# ✅ Use a dictionary to count character frequencies.
+# ✅ Find the first character with a count of 1.
+# ❌ Don't use collections.Counter.
+# ❌ Don't use set().
+# ❌ Don't use list comprehensions.
+
+def first_non_repeating(string):
+    freq = {}
+
+    for i in string:
+        if i in freq:
+            freq[i] += 1
+        else:
+            freq[i] = 1
+    for i in string:
+        if freq[i] == 1:
+            print(f"First Non-Repeating Character: {i}")
+            return
+    print("No Non-Repeating Character ❌")
+
+string = input("Enter String: ")
+first_non_repeating(string)
