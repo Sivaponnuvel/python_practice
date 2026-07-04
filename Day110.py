@@ -56,3 +56,52 @@ else:
     print("No Matching Students ❌")
 
 
+# 🔹 Question 2 – Display Students Whose Age is Equal to the Highest Age
+# Using table:
+# students
+# Write a Python program to display all students whose age is equal to the highest age in the table.
+# Use only one query:
+# SELECT *
+# FROM students
+# WHERE age = (
+#     SELECT MAX(age)
+#     FROM students
+# );
+# Example Table
+# ID	Name	Age
+# 1	Siva	23
+# 2	Ram	25
+# 3	Arun	25
+# 4	Vijay	21
+# Example Output
+# Oldest Student(s):
+# ID: 2
+# Name: Ram
+# Age: 25
+# ID: 3
+# Name: Arun
+# Age: 25
+# If no records exist:
+# No Students Found ❌
+# ⚠️ Conditions
+# ✅ Use a subquery
+# ✅ Use MAX()
+# ✅ Use fetchall()
+# ✅ Display using a loop
+# ❌ Don't execute two separate queries
+# ❌ Don't calculate the maximum age in Python
+
+cursor.execute("select * from students where age = (select max(age) from students)")
+detail = cursor.fetchall()
+
+if detail:
+    print("Oldest Student(s):")
+    for i in detail:
+        print(f"ID: {i[0]}")
+        print(f"Name: {i[1]}")
+        print(f"Age: {i[2]}")
+else:
+    print("No Students Found ❌")
+
+cursor.close()
+con.close()
