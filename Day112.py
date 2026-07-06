@@ -60,3 +60,52 @@ else:
     print("No Students Found ❌")
 
 
+# 🔹 Question 2 – Display Student Count Greater Than a Given Age (GROUP BY + HAVING)
+# Using table:
+# students
+# Write a Python program to:
+# 👉 Take an age from the user.
+# Example:
+# Enter Age: 21
+# Use the query:
+# SELECT age, COUNT(*)
+# FROM students
+# GROUP BY age
+# HAVING age > %s;
+# Display all matching groups.
+# Example Table
+# ID	Name	Age
+# 1	Siva	20
+# 2	Ram	21
+# 3	Arun	22
+# 4	Vijay	22
+# 5	Karthik	24
+# Example Output
+# Enter Age: 21
+# Age Groups:
+# Age 22 : 2 Student(s)
+# Age 24 : 1 Student(s)
+# If no matching age groups exist:
+# No Matching Age Groups ❌
+# ⚠️ Conditions
+# ✅ Use GROUP BY
+# ✅ Use HAVING
+# ✅ Use parameterized query
+# ✅ Use fetchall()
+# ✅ Display using a loop
+# ❌ Don't filter age groups in Python
+# ❌ Don't execute multiple queries
+
+age = input("Enter Age: ")
+cursor.execute("select age, count(*) from students group by age having age > %s",(age,))
+detail = cursor.fetchall()
+
+if detail:
+    print("Age Groups:")
+    for i in detail:
+        print(f"Age {i[0]} : {i[1]} Student(s)")
+else:
+    print("No Matching Age Groups ❌")
+
+cursor.close()
+con.close()
