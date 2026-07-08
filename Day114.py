@@ -56,3 +56,48 @@ else:
     print("Student Not Found ❌")
 
 
+# 🔹 Question 2 – Display Average Age for Students Above a Given Age
+# Using table:
+# students
+# Write a Python program to:
+# 👉 Take an age from the user.
+# Example:
+# Enter Minimum Age: 20
+# Use the query:
+# SELECT AVG(age)
+# FROM students
+# WHERE age > %s;
+# Display:
+# Average Age: 24.33
+# If no students match:
+# No Matching Students ❌
+# Example
+# Table
+# ID	Name	Age
+# 1	Siva	20
+# 2	Ram	22
+# 3	Arun	24
+# 4	Vijay	27
+# Input
+# Enter Minimum Age: 21
+# Output
+# Average Age: 24.33
+# ⚠️ Conditions
+# ✅ Use AVG()
+# ✅ Use WHERE
+# ✅ Use parameterized query
+# ✅ Use fetchone()
+# ❌ Don't calculate the average in Python.
+# ❌ Don't fetch all records and compute manually.
+
+age = int(input("Enter Minimum Age: "))
+cursor.execute("select avg(age) from students where age > %s",(age,))
+detail = cursor.fetchone()
+
+if detail[0] is not None:
+    print(f"Average Age: {detail[0]}")
+else:
+    print("No Matching Students ❌")
+
+cursor.close()
+con.close()
