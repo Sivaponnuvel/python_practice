@@ -58,3 +58,41 @@ with DatabaseConnection(db_name)as db:
     db.execute_query(query)
 
 
+# 🔹 Question 2 – Interview Question: Longest Word in a Sentence
+# Write a Python program to find the longest word in a sentence.
+# Example 1
+# Enter Sentence:
+# Python is an amazing programming language
+# Output:
+# Longest Word: programming
+# Length: 11
+# Example 2
+# Enter Sentence:
+# I love coding
+# Output:
+# Longest Word: coding
+# Length: 6
+# Example 3
+# Enter Sentence:
+# Output:
+# No Words Found ❌
+# ⚠️ Conditions
+# ✅ Take input from the user
+# ✅ Use split()
+# ✅ Use a loop to find the longest word
+# ✅ Handle empty input
+# ❌ Don't use max()
+# ❌ Don't sort the words
+
+sentence = input("Enter Sentence: ").strip()
+
+if sentence == "":
+    print("No Words Found ❌")
+else:
+    word = sentence.split()
+    longest_word = word[0]
+    for i in word:
+        if len(i) > len(longest_word):
+            longest_word = i
+    print(f"Longest Word: {longest_word}")
+    print(f"Length: {len(longest_word)}")
