@@ -53,3 +53,77 @@ else:
     print("Wrong Choice ❌")
 
 
+# 🔹 Question 2 – JSON: Student Marks Management
+# Create a file:
+# students.json
+# Store the following data:
+# [
+#     {"id": 1, "name": "Siva", "marks": 85},
+#     {"id": 2, "name": "Ram", "marks": 72},
+#     {"id": 3, "name": "Arun", "marks": 91}
+# ]
+# Create two functions:
+# view_students()
+# Display:
+# --- Student Details ---
+# ID: 1
+# Name: Siva
+# Marks: 85
+# for all students.
+# search_student(student_name)
+# Take a student name from the user.
+# If found:
+# Student Found ✅
+# ID: 2
+# Name: Ram
+# Marks: 72
+# Otherwise:
+# Student Not Found ❌
+# Program Flow
+# Display all students.
+# Ask for a student name.
+# Search and display the result.
+# ⚠️ Conditions
+# ✅ Use json.load()
+# ✅ Use functions
+# ✅ Use file handling
+# ✅ Search manually using a loop
+# ❌ Don't use list comprehensions
+# ❌ Don't use external libraries
+
+import json
+filename = "D:/Backend/Python/Own try/practice/Day117/students.json"
+
+students = [
+    {"id": 1, "name": "Siva", "marks": 85},
+    {"id": 2, "name": "Vijay", "marks": 72},
+    {"id": 3, "name": "Kishore", "marks": 91}
+]
+
+with open(filename,"w")as file:
+    json.dump(students, file)
+
+def view_students():
+    with open(filename, 'r')as file:
+        read = json.load(file)
+        print("--- Student Details ---")
+        for i in read:
+            print(f"ID: {i['id']}")
+            print(f"Name: {i['name']}")
+            print(f"Marks: {i['marks']}")
+
+def search_student(student_name):
+    with open(filename, 'r')as file:
+        read = json.load(file)
+        for i in read:
+            if student_name == i['name']:
+                print("Student Found ✅")
+                print(f"ID: {i['id']}")
+                print(f"Name: {i['name']}")
+                print(f"Marks: {i['marks']}")
+                return
+        print("Student Not Found ❌")
+
+view_students()
+student_name = input("Enter Student Name: ").capitalize()
+search_student(student_name)
