@@ -52,3 +52,34 @@ else:
     print("No Students Found ❌")
 
 
+# 🔹 Question 2 – Display Total Students and Average Age
+# Use one query only:
+# SELECT COUNT(*), AVG(age)
+# FROM students;
+# Example Output:
+# Student Statistics
+# ------------------
+# Total Students : 5
+# Average Age    : 24.6
+# If no records:
+# No Students Found ❌
+# Conditions
+# ✅ Use COUNT(*)
+# ✅ Use AVG()
+# ✅ Use fetchone()
+# ❌ Don't calculate average in Python
+# ❌ Don't execute two separate queries
+
+cursor.execute("select count(*), avg(age) from students")
+detail = cursor.fetchone()
+
+if detail and detail[0] > 0:
+    print("Student Statistics")
+    print("------------------")
+    print(f"Total Students : {detail[0]}")
+    print(f"Average Age    : {detail[1]:.1f}")
+else:
+    print("No Students Found ❌")
+
+cursor.close()
+con.close()
