@@ -126,6 +126,7 @@ I am consistently improving my problem-solving and programming skills by practic
 * Day117 – Completed ✅
 * Day118 – Completed ✅
 * Day119 – Completed ✅
+* Day120 – Completed ✅
 
 ---
 
