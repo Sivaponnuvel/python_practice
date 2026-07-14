@@ -50,3 +50,46 @@ else:
     print("No Students Found ❌")
 
 
+# 🔹 Question 2 – Display Youngest Student(s)
+# Using table:
+# students
+# Write a Python program to display all students whose age is equal to the minimum age in the table.
+# Use only one query:
+# SELECT *
+# FROM students
+# WHERE age = (
+#     SELECT MIN(age)
+#     FROM students
+# );
+# Example Output:
+# Youngest Student(s):
+# ID: 6
+# Name: Siva
+# Age: 20
+# ID: 9
+# Name: Ram
+# Age: 20
+# If no records exist:
+# No Students Found ❌
+# ⚠️ Conditions
+# ✅ Use a subquery
+# ✅ Use MIN()
+# ✅ Use fetchall()
+# ✅ Display using a loop
+# ❌ Don't execute two separate queries
+# ❌ Don't calculate the minimum age in Python
+
+cursor.execute("select * from students where age = (select min(age) from students)")
+details = cursor.fetchall()
+
+if details:
+    print("Youngest Student(s):")
+    for i in details:
+        print(f"ID: {i[0]}")
+        print(f"Name: {i[1]}")
+        print(f"Age: {i[2]}")
+else:
+    print("No Students Found ❌")
+
+cursor.close()
+con.close()
