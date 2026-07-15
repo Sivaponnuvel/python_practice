@@ -41,3 +41,39 @@ else:
     print("Student Not Found ❌")
 
 
+# 🔹 Question 2 – Sets: Common Subjects
+# Write a Python program to find the common subjects chosen by two students.
+# Program Flow
+# Take subjects as space-separated input.
+# Example:
+# Enter Subjects for Student 1:
+# Python Java MySQL HTML
+# Enter Subjects for Student 2:
+# Python Django HTML CSS
+# Convert both inputs into sets.
+# Find the common subjects using a set operation.
+# Example Output
+# Common Subjects:
+# Python
+# HTML
+# If there are no common subjects:
+# No Common Subjects ❌
+# ⚠️ Conditions
+# ✅ Use set()
+# ✅ Use set intersection (& or intersection())
+# ✅ Display the common subjects using a loop
+# ❌ Don't compare subjects using nested loops
+# ❌ Don't use lists for comparison
+
+student1 = input("Enter Subjects for Student 1: ").split()
+student2 = input("Enter Subjects for Student 2: ").split()
+student1 = set(student1)
+student2 = set(student2)
+
+common_subjects = student1 & student2
+if common_subjects:
+    print("Common Subjects:")
+    for i in common_subjects:
+        print(i)
+else:
+    print("No Common Subjects ❌")
