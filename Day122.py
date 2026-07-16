@@ -55,3 +55,40 @@ else:
     print("No Matching Students ❌")
 
 
+# 🔹 Question 2 – Display Student Count and Maximum Age
+# Using table:
+# students
+# Write a Python program to display:
+# Total number of students
+# Maximum age among students
+# Use only one query:
+# SELECT COUNT(*), MAX(age)
+# FROM students;
+# Example Output
+# Student Statistics
+# ------------------
+# Total Students : 12
+# Maximum Age    : 27
+# If there are no students:
+# No Students Found ❌
+# ⚠️ Conditions
+# ✅ Use COUNT(*)
+# ✅ Use MAX(age)
+# ✅ Use fetchone()
+# ✅ Use only one query
+# ❌ Don't execute two separate queries
+# ❌ Don't calculate the maximum age in Python
+
+cursor.execute("select count(*), max(age) from students")
+details = cursor.fetchone()
+
+if details[0] > 0:
+    print("Student Statistics")
+    print("------------------")
+    print(f"Total Students : {details[0]}")
+    print(f"Maximum Age    : {details[1]}")
+else:
+    print("No Students Found ❌")
+
+cursor.close()
+con.close()
