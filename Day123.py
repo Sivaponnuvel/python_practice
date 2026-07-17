@@ -32,3 +32,32 @@ print("Unique Numbers:")
 print(*unique_num)
 
 
+# 🔹 Question 2 – Tuple: Find the Second Smallest Number
+# Write a Python program to find the second smallest unique number from a tuple.
+# Program Flow
+# Take numbers from the user as space-separated input.
+# Convert them into a tuple.
+# Example:
+# Enter Numbers:
+# 8 3 6 2 8 1 2
+# Output:
+# Second Smallest Number: 2
+# Example 2
+# Enter Numbers:
+# 5 5 5
+# Output:
+# No Second Smallest Number ❌
+# ⚠️ Conditions
+# ✅ Convert the input into a tuple
+# ✅ Use set() and sorted()
+# ✅ Display the second smallest unique number
+# ❌ Don't manually search using nested loops
+# ❌ Don't import any libraries
+
+nums = tuple(map(int,input("Enter Numbers: ").split()))
+unique_nums = sorted(set(nums))
+
+if len(unique_nums) >= 2:
+    print(f"Second Smallest Number: {unique_nums[1]}")
+else:
+    print("No Second Smallest Number ❌")
