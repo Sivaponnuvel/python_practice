@@ -43,3 +43,38 @@ else:
     print("No Students Found ❌")
 
 
+# 🔹 Question 2 – Count Students Between Two Ages
+# Write a Python program to count how many students have an age between two values (inclusive).
+# Table: students
+# Column Name	Type
+# id	INT
+# name	VARCHAR
+# age	INT
+# Program Flow
+# Take the minimum age from the user.
+# Take the maximum age from the user.
+# Display the total number of students whose age is between those two values (including both values).
+# Example
+# Input
+# Enter Minimum Age: 18
+# Enter Maximum Age: 22
+# Output
+# Total Students: 5
+# ⚠️ Conditions
+# ✅ Take both values from the user
+# ✅ Use one SQL query
+# ✅ Use COUNT(*)
+# ✅ Use a parameterized query (%s)
+# ✅ Use fetchone()
+# ❌ Don't count records in Python
+# ❌ Don't use more than one SQL query
+
+min_age = int(input("Enter Minimum Age: "))
+max_age = int(input("Enter Maximum Age: "))
+cursor.execute("select count(*) from students where age between %s and %s",(min_age, max_age))
+detail = cursor.fetchone()
+
+print(f"Total Students: {detail[0]}")
+
+cursor.close()
+con.close()
