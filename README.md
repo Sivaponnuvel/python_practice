@@ -133,6 +133,7 @@ I am consistently improving my problem-solving and programming skills by practic
 * Day124 – Completed ✅
 * Day125 – Completed ✅
 * Day126 – Completed ✅
+* Day127 – Completed ✅
 
 ---
 
