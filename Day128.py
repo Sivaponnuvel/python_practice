@@ -45,3 +45,41 @@ for i in detail:
     print(i[0])
 
 
+# 🔹 Question 2 – Display the Second Oldest Student(s)
+# Write a Python program to display the details of the second oldest student(s).
+# Note: If multiple students have the second highest age, display all of them.
+# Table: students
+# Column Name	Type
+# id	INT
+# name	VARCHAR
+# age	INT
+# Example
+# Suppose the table contains:
+# id	name	age
+# 1	Siva	21
+# 2	Rahul	24
+# 3	Priya	23
+# 4	Vijay	24
+# 5	Arun	23
+# Output
+# 3 Priya 23
+# 5 Arun 23
+# ⚠️ Conditions
+# ✅ Use only one SQL query
+# ✅ Use DISTINCT
+# ✅ Use ORDER BY
+# ✅ Use LIMIT
+# ✅ Use fetchall()
+# ✅ Display using a loop
+# ❌ Don't calculate the second highest age in Python
+# ❌ Don't use two SQL queries
+
+cursor.execute("select * from students where age = ("
+"select distinct(age) from students order by age desc limit 1 offset 1)")
+details =  cursor.fetchall()
+
+for i in details:
+    print(f"{i[0]} {i[1]} {i[2]}")
+
+cursor.close()
+con.close()
