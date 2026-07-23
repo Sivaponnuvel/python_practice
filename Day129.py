@@ -34,3 +34,47 @@ print(f"Vowels     : {count_vowel}")
 print(f"Consonants : {count_consonant}")
 
 
+# 🔹 Question 2 – Intermediate Interview Question: First Non-Repeating Character
+# Write a Python program to find the first non-repeating character in a string.
+# Program Flow
+# Take a string from the user.
+# Find the first character that appears only once.
+# Display that character.
+# If every character repeats, display:
+# No Non-Repeating Character ❌
+# Example 1
+# Input
+# Enter a String: swiss
+# Output
+# First Non-Repeating Character: w
+# Example 2
+# Input
+# Enter a String: aabbcc
+# Output
+# No Non-Repeating Character ❌
+# ⚠️ Conditions
+# ✅ Take input from the user
+# ✅ Use a dictionary
+# ✅ Use a loop
+# ✅ Preserve the original order
+# ❌ Don't use collections.Counter
+# ❌ Don't import any libraries
+
+def first_non_repeating(user):
+    count = {}
+    for i in user:
+        if i in count:
+            count[i] += 1
+        else:
+            count[i] = 1
+    found = False
+    for i in user:
+        if count[i] == 1:
+            print(f"First Non-Repeating Character: {i}")
+            found = True
+            return
+    if not found:
+        print("No Non-Repeating Character ❌")
+
+user = input("Enter a String: ")
+first_non_repeating(user)
