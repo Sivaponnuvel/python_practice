@@ -45,4 +45,39 @@ for i in details:
     print(f"Age : {i[1]}  Total Students : {i[0]}")
 
 
+# 🔹 Question 2 – Display Age Groups Having More Than One Student
+# Write a Python program to display only those age groups that have more than one student.
+# Table: students
+# Column Name	Type
+# id	INT
+# name	VARCHAR
+# age	INT
+# Example
+# Suppose the table contains:
+# id	name	age
+# 1	Siva	21
+# 2	Rahul	22
+# 3	Priya	21
+# 4	Vijay	20
+# 5	Arun	22
+# Output
+# Age : 21  Total Students : 2
+# Age : 22  Total Students : 2
+# ⚠️ Conditions
+# ✅ Use GROUP BY
+# ✅ Use HAVING
+# ✅ Use COUNT(*)
+# ✅ Use fetchall()
+# ✅ Display using a loop
+# ❌ Don't filter the result in Python
+# ❌ Don't use WHERE COUNT(*)
+# ❌ Don't use more than one SQL query
 
+cursor.execute("select count(*), age from students group by age having count(*) > 1")
+detail = cursor.fetchall()
+
+for i in detail:
+    print(f"Age : {i[1]}  Total Students : {i[0]}")
+
+cursor.close()
+con.close()
