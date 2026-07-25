@@ -32,3 +32,48 @@ def find_largest(*args):
 print(f"Largest Number: {find_largest(7, 21, 35, 77, 50)}")
 
 
+# 🔹 Question 2 – Intermediate Interview Question: Find Duplicate Characters
+# Write a Python program to display all characters that appear more than once in a string, along with their frequencies.
+# Program Flow
+# Take a string from the user.
+# Count the frequency of each character.
+# Display only the duplicate characters and their counts.
+# Preserve the order of first occurrence.
+# Example 1
+# Input
+# Enter a String: programming
+# Output
+# r : 2
+# g : 2
+# m : 2
+# Example 2
+# Input
+# Enter a String: python
+# Output
+# No Duplicate Characters ❌
+# ⚠️ Conditions
+# ✅ Take input from the user
+# ✅ Use a dictionary
+# ✅ Use loops
+# ✅ Preserve the original order
+# ❌ Don't use collections.Counter
+# ❌ Don't import any libraries
+# ❌ Don't print the same duplicate character more than once
+
+def find_duplicate_char(string):
+    count = {}
+    for i in string:
+        if i in count:
+            count[i] += 1
+        else:
+            count[i] = 1
+    found = False
+    for char, freq in count.items():
+        if freq > 1:
+            print(f"{char} : {freq}")
+            found = True
+    if not found:
+        print("No Duplicate Characters ❌")
+
+string = input("Enter a String: ")
+find_duplicate_char(string)
