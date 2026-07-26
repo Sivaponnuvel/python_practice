@@ -50,3 +50,52 @@ else:
     print("Student Not Found ❌")
 
 
+# 🔹 Question 2 – Increase Age by 1 for Students Older Than a Given Age
+# Write a Python program to increase the age by 1 for all students whose age is greater than the age entered by the user.
+# Table: students
+# Column Name	Type
+# id	INT
+# name	VARCHAR
+# age	INT
+# Program Flow
+# Take an age from the user.
+# Increase the age of all students whose age is greater than the entered age.
+# If records are updated, display:
+# Total Students Updated: <count>
+# Otherwise, display:
+# No Students Updated ❌
+# Example
+# Input
+# Enter Age: 20
+# Suppose the table contains:
+# id	name	age
+# 1	Siva	21
+# 2	Rahul	22
+# 3	Priya	20
+# After execution:
+# id	name	age
+# 1	Siva	22
+# 2	Rahul	23
+# 3	Priya	20
+# Output
+# Total Students Updated: 2
+# ⚠️ Conditions
+# ✅ Use one UPDATE query
+# ✅ Use a parameterized query (%s)
+# ✅ Use commit()
+# ✅ Use cursor.rowcount
+# ❌ Don't update records in Python
+# ❌ Don't use SELECT before UPDATE
+# ❌ Don't use more than one SQL query
+
+age = int(input("Enter Age: "))
+cursor.execute("update students set age = age + 1 where age > %s",(age,))
+con.commit()
+
+if cursor.rowcount > 0:
+    print(f"Total Students Updated: {cursor.rowcount}")
+else:
+    print("No Students Updated ❌")
+
+cursor.close()
+con.close()
