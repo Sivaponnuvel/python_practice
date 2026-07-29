@@ -28,3 +28,40 @@ print("Squared Numbers:")
 print(*squared_numbers)
 
 
+# 🔹 Question 2 – Intermediate Interview Question: Longest Word in a Sentence
+# Write a Python program to find the longest word in a sentence.
+# If multiple words have the same maximum length, display the first one.
+# Program Flow
+# Take a sentence from the user.
+# Split the sentence into words.
+# Find the longest word.
+# Display the longest word and its length.
+# Example 1
+# Input
+# Enter a Sentence: Python is an amazing programming language
+# Output
+# Longest Word : programming
+# Length       : 11
+# Example 2
+# Input
+# Enter a Sentence: I love coding
+# Output
+# Longest Word : coding
+# Length       : 6
+# ⚠️ Conditions
+# ✅ Take input from the user
+# ✅ Use split()
+# ✅ Use a loop
+# ✅ Display the first longest word if there is a tie
+# ❌ Don't use max()
+# ❌ Don't sort the words
+# ❌ Don't import any libraries
+
+sentence = input("Enter a Sentence: ").split()
+longest_word = sentence[0]
+for i in sentence:
+    if len(i) >= len(longest_word):
+        longest_word = i
+
+print(f"Longest Word : {longest_word}")
+print(f"Length       : {len(longest_word)}")
