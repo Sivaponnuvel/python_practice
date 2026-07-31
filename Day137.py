@@ -27,3 +27,32 @@ even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
 print(*even_numbers)
 
 
+# 🔹 Question 2 – zip(): Combine Student Names and Marks
+# Write a Python program to combine two lists using zip().
+# Program Flow
+# Take student names as space-separated input.
+# Take student marks as space-separated input.
+# Combine both lists using zip().
+# Display each student's name and mark.
+# Example
+# Input
+# Enter Student Names: Siva Rahul Priya
+# Enter Student Marks: 85 90 78
+# Output
+# Siva : 85
+# Rahul : 90
+# Priya : 78
+# ⚠️ Conditions
+# ✅ Take both lists from the user
+# ✅ Use zip()
+# ✅ Use a loop to display the output
+# ❌ Don't use indexing like names[i]
+# ❌ Don't use range()
+
+names = input("Enter Students Names: ").split()
+marks = list(map(int, input("Enter Students Marks: ").split()))
+
+result = list(zip(names,marks))
+
+for name, mark in result:
+    print(f"{name} : {mark}")
