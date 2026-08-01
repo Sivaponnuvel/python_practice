@@ -25,3 +25,26 @@ res = reduce(lambda x, y: x * y, numbers)
 print(f"Product: {res}")
 
 
+# 🔹 Question 2 – enumerate(): Display Index and Name
+# Write a Python program to display the index and student name using enumerate().
+# Program Flow
+# Take student names as space-separated input.
+# Use enumerate() to display the index and name.
+# Example
+# Input
+# Enter Student Names: Siva Rahul Priya
+# Output
+# 0 : Siva
+# 1 : Rahul
+# 2 : Priya
+# ⚠️ Conditions
+# ✅ Take input from the user
+# ✅ Use enumerate()
+# ✅ Use a loop
+# ❌ Don't use range(len(...))
+# ❌ Don't manually maintain an index variable
+
+names = input("Enter Student Names: ").split()
+
+for index, name in enumerate(names):
+    print(f"{index} : {name}")
