@@ -50,3 +50,36 @@ for i in details:
     print(f"{i[0]} {i[1]} {i[2]}")
 
 
+# 🔹 Question 2 – Display Average Age of Students
+# Write a Python program to display the average age of all students.
+# Table: students
+# Column Name	Type
+# id	INT
+# name	VARCHAR
+# age	INT
+# Program Flow
+# Calculate the average age of all students.
+# Display the result.
+# Example
+# Suppose the table contains:
+# id	name	age
+# 1	Siva	20
+# 2	Rahul	22
+# 3	Priya	24
+# Output
+# Average Age: 22.0
+# ⚠️ Conditions
+# ✅ Use AVG(age)
+# ✅ Use one SQL query
+# ✅ Use fetchone()
+# ✅ Display the result
+# ❌ Don't calculate the average in Python
+# ❌ Don't use fetchall()
+
+cursor.execute("select avg(age) from students")
+detail = cursor.fetchone()
+
+print(f"Average Age: {detail[0]}")
+
+cursor.close()
+con.close()
