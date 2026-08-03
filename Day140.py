@@ -39,3 +39,50 @@ except ValueError:
     print("Invalid Input ❌")
 
 
+# 🔹 Question 2 – Dictionary: Student with Highest Marks
+# Write a Python program to find the student who has scored the highest marks.
+# Program Flow
+# Ask the user how many students they want to enter.
+# Store the data in a dictionary.
+# Key → Student Name
+# Value → Marks
+# Find the student with the highest marks.
+# Display the student's name and marks.
+# Example
+# Input
+# How Many Students: 3
+# Enter Student Name: Siva
+# Enter Marks: 85
+# Enter Student Name: Rahul
+# Enter Marks: 92
+# Enter Student Name: Priya
+# Enter Marks: 78
+# Output
+# Top Student : Rahul
+# Marks       : 92
+# ⚠️ Conditions
+# ✅ Take input from the user
+# ✅ Use a dictionary
+# ✅ Use a loop
+# ✅ Don't use max(dictionary, key=dictionary.get)
+# ❌ Don't sort the dictionary
+# ❌ Don't import any libraries
+
+students = {}
+
+n = int(input("How Many Students: "))
+
+for i in range(n):
+    name = input("Enter Student Name: ")
+    marks = int(input("Enter Marks: "))
+    students[name] = marks
+
+top_student = "" 
+top_marks = -1
+
+for i in students:
+    if students[i] > top_marks:
+        top_marks = students[i]
+        top_student = i
+print(f"Top Student : {top_student}")
+print(f"Marks       : {top_marks}")
