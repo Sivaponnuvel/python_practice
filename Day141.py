@@ -74,3 +74,52 @@ print("After Transactions")
 obj.display()
 
 
+# 🔹 Question 2 – String Interview Question: Longest Substring Without Repeating Characters
+# Write a Python program to find the length of the longest substring without repeating characters.
+# Program Flow
+# Take a string from the user.
+# Find the longest substring that contains no repeated characters.
+# Display only the length.
+# Example 1
+# Input
+# Enter String: abcabcbb
+# Output
+# Length: 3
+# Explanation: "abc" is the longest substring without repeating characters.
+# Example 2
+# Input
+# Enter String: bbbbb
+# Output
+# Length: 1
+# Example 3
+# Input
+# Enter String: pwwkew
+# Output
+# Length: 3
+# Explanation: "wke" is the longest substring without repeating characters.
+# ⚠️ Conditions
+# ✅ Take input from the user
+# ✅ Use loops
+# ✅ Use a dictionary
+# ✅ Return/display only the length
+# ❌ Don't use sets as the main solution
+# ❌ Don't import any libraries
+
+user = input("Enter String: ")
+
+char_index = {}
+start = 0 
+max_length = 0
+
+for end in range(len(user)):
+    if user[end] in char_index and char_index[user[end]] >= start:
+        start = char_index[user[end]] + 1
+
+    char_index[user[end]] = end
+
+    length = end - start + 1
+
+    if length > max_length:
+        max_length = length
+
+print(f"Length: {max_length}")
