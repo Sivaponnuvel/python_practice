@@ -34,3 +34,58 @@ try:
 except FileNotFoundError:
     print("File Not Found ❌")
 
+
+# 🔹 Question 2 – JSON: Add a New Student
+# A JSON file named students.json contains the following data:
+# [
+#     {"id": 1, "name": "Siva", "age": 21},
+#     {"id": 2, "name": "Rahul", "age": 22}
+# ]
+# Write a Python program to add a new student to the JSON file.
+# Program Flow
+# Read the JSON data from students.json.
+# Take the following inputs from the user:
+# Student ID
+# Student Name
+# Student Age
+# Add the new student to the existing list.
+# Write the updated data back to the same JSON file.
+# Display:
+# Student Added Successfully ✅
+# Example
+# Input
+# Enter Student ID: 3
+# Enter Student Name: Priya
+# Enter Student Age: 20
+# Output
+# Student Added Successfully ✅
+# ⚠️ Conditions
+# ✅ Use the json module
+# ✅ Read the existing JSON data
+# ✅ Append the new student
+# ✅ Write back using json.dump()
+# ✅ Take input from the user
+# ❌ Don't overwrite the file without first reading the existing data
+# ❌ Don't import any libraries other than json
+
+import json
+filename = "D:/Backend/Python/Own try/python_practice/Day146/students.json"
+
+with open(filename, "r") as file:
+    students = json.load(file)
+
+stu_id = int(input("Enter Student ID: "))
+stu_name = input("Enter Student Name: ")
+stu_age = int(input("Enter Student Age: "))
+
+new_student ={
+    "id": stu_id,
+    "name": stu_name,
+    "age": stu_age
+}
+students.append(new_student)
+
+with open(filename, "w") as file:
+    json.dump(students, file, indent=4)
+
+print("Student Added Successfully ✅")
