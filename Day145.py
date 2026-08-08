@@ -44,3 +44,43 @@ b = int(input("Enter Second Number: "))
 print(f"Result: {add(a, b)}")
 
 
+# 🔹 Question 2 – Dictionary Interview Question: Word Frequency
+# Write a Python program to count how many times each word appears in a sentence.
+# Program Flow
+# Take a sentence from the user.
+# Split the sentence into words.
+# Store the frequency of each word in a dictionary.
+# Display each word and its count.
+# Preserve the order of first occurrence.
+# Example
+# Input
+# Enter Sentence: python is easy python is powerful
+# Output
+# python : 2
+# is : 2
+# easy : 1
+# powerful : 1
+# Example 2
+# Input
+# Enter Sentence: hello hello hello
+# Output
+# hello : 3
+# ⚠️ Conditions
+# ✅ Take input from the user
+# ✅ Use a dictionary
+# ✅ Use split()
+# ✅ Use loops
+# ✅ Preserve the order of first occurrence
+# ❌ Don't use collections.Counter
+# ❌ Don't import any libraries
+
+sentence = input("Enter Sentence: ").split()
+freq = {}
+for i in sentence:
+    if i in freq:
+        freq[i] += 1
+    else:
+        freq[i] = 1
+
+for key, value in freq.items():
+    print(f"{key} : {value}")
