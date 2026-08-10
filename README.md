@@ -153,6 +153,7 @@ I am consistently improving my problem-solving and programming skills by practic
 * Day144 – Completed ✅
 * Day145 – Completed ✅
 * Day146 – Completed ✅
+* Day147 – Completed ✅
 
 ---
 
