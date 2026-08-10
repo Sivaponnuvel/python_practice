@@ -47,3 +47,51 @@ print(f"Prime     : {is_prime(number)}")
 print(f"Factorial : {factorial(number)}")
 
 
+# 🔹 Question 2 – Packages: Create and Use Your Own Package
+# Create a Python package named operations.
+# Your project structure should be:
+# Day147/
+# │
+# ├── main.py
+# │
+# └── operations/
+#     ├── __init__.py
+#     └── calculator.py
+# File: operations/calculator.py
+# Create these functions:
+# add(a, b)
+# subtract(a, b)
+# multiply(a, b)
+# Each function should return its result.
+# File: main.py
+# Import the calculator module from the operations package.
+# Take two integers from the user.
+# Use the three functions.
+# Display the results.
+# Example
+# Input
+# Enter First Number: 20
+# Enter Second Number: 5
+# Output
+# Addition       : 25
+# Subtraction    : 15
+# Multiplication : 100
+# ⚠️ Conditions
+# ✅ Create an operations package
+# ✅ Create __init__.py
+# ✅ Create calculator.py inside the package
+# ✅ Define the three functions inside calculator.py
+# ✅ Import calculator from the operations package
+# ✅ Take input from the user
+# ✅ Use the package functions
+# ❌ Don't put the functions inside main.py
+# ❌ Don't import any external libraries
+
+from operations import calculator
+
+a = int(input("Enter First Number: "))
+b = int(input("Enter Second Number: "))
+
+print(f"Addition       : {calculator.add(a, b)}")
+print(f"Subtraction    : {calculator.subtract(a, b)}")
+print(f"Multiplication : {calculator.multiply(a, b)}")
