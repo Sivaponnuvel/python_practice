@@ -89,3 +89,68 @@ except ValueError as e:
     print(e)
 
 
+# 🔹 Question 2 – Exception Handling: Student Marks Validation
+# Write a Python program to take a student's name and marks, then validate the marks using custom exception handling.
+# Program Flow
+# Take the following inputs:
+# Enter Student Name:
+# Enter Marks:
+# Marks must be between 0 and 100.
+# Create a function:
+# validate_marks(marks)
+# Inside the function:
+# If marks are less than 0, raise ValueError.
+# If marks are greater than 100, raise ValueError.
+# Otherwise return the marks.
+# Use try-except to handle invalid marks.
+# Example 1
+# Input
+# Enter Student Name: Siva
+# Enter Marks: 85
+# Output
+# Student Name : Siva
+# Marks        : 85
+# Valid Marks ✅
+# Example 2
+# Input
+# Enter Student Name: Rahul
+# Enter Marks: 120
+# Output
+# Invalid Marks ❌
+# Marks must be between 0 and 100
+# Example 3
+# Input
+# Enter Student Name: Priya
+# Enter Marks: abc
+# Output
+# Invalid Input ❌
+# ⚠️ Conditions
+# ✅ Take input from the user
+# ✅ Create validate_marks(marks)
+# ✅ Use try-except
+# ✅ Use ValueError
+# ✅ Use raise ValueError
+# ✅ Handle non-integer input
+# ❌ Don't use external libraries
+# ❌ Don't use if to handle the exception outside validate_marks()
+
+def validate_marks(marks):
+    if marks < 0 or marks > 100:
+        raise ValueError("Invalid Marks ❌ \nMarks must be between 0 and 100")
+    return marks
+
+try:
+    stu_name = input("Enter Student Name: ")
+    stu_mark = int(input("Enter Marks: "))
+
+    marks = validate_marks(stu_mark)
+
+    print(f"Student Name : {stu_name}")
+    print(f"Marks        : {marks}")
+    print("Valid Marks ✅")
+
+except ValueError as e:
+    if "invalid literal" in str(e):
+        print("Invalid Input ❌")
+    else:
+        print(e)
