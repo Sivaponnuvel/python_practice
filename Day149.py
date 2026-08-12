@@ -64,3 +64,71 @@ obj = Developer(name, salary, language)
 obj.display()
 
 
+# 🔹 Question 2 – Advanced Decorator: Decorator with *args and **kwargs
+# Write a Python program to create a decorator that checks whether all arguments passed to a function are positive numbers.
+# Create a decorator named:
+# positive_numbers
+# The decorator should use:
+# *args
+# **kwargs
+# Program Flow
+# Create a function:
+# calculate_sum(a, b, c)
+# which returns the sum of the three numbers.
+# Apply the decorator:
+# @positive_numbers
+# Before executing the function:
+# Check all arguments.
+# If any argument is 0 or negative, raise:
+# ValueError: All numbers must be positive ❌
+# Otherwise execute the function normally.
+# Example 1
+# Input
+# Enter First Number: 10
+# Enter Second Number: 20
+# Enter Third Number: 30
+# Output
+# Result: 60
+# Example 2
+# Input
+# Enter First Number: 10
+# Enter Second Number: -5
+# Enter Third Number: 20
+# Output
+# Error: All numbers must be positive ❌
+# ⚠️ Conditions
+# ✅ Create a decorator positive_numbers
+# ✅ Use an inner wrapper()
+# ✅ Use *args and **kwargs
+# ✅ Check the arguments inside the decorator
+# ✅ Use raise ValueError
+# ✅ Use @positive_numbers
+# ✅ Return the original function's result
+# ✅ Use try-except when calling the decorated function
+# ❌ Don't validate the numbers inside calculate_sum()
+# ❌ Don't modify calculate_sum() to perform validation
+# ❌ Don't import any libraries
+
+def positive_numbers(func):
+    def wrapper(*args, **kwargs):
+        for i in args:
+            if i <= 0:
+                raise ValueError("All numbers must be positive ❌")
+        for i in kwargs.values():
+            if i <= 0:
+                raise ValueError("All numbers must be positive ❌")
+        return func(*args, **kwargs)
+    return wrapper
+
+@positive_numbers
+def calculate_sum(a, b, c):
+    return a + b + c
+
+try:
+    a = int(input("Enter First Number: "))
+    b = int(input("Enter Second Number: "))
+    c = int(input("Enter Third Number: "))
+    print(f"Result: {calculate_sum(a, b, c)}")
+
+except ValueError as e:
+    print(f"Error: {e}")
