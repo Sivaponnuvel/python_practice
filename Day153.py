@@ -58,3 +58,45 @@ obj = car(brand, model, fuel)
 obj.display()
 
 
+# 🔹 Question 2 – String Interview: Remove Duplicate Characters
+# Write a Python program to remove duplicate characters from a string while preserving the first occurrence order.
+# Example 1
+# Enter String: programming
+# Output:
+# Result: progamin
+# Example 2
+# Enter String: banana
+# Output:
+# Result: ban
+# Program Flow
+# Take a string from the user.
+# Check each character.
+# Add the character only if it has not already appeared.
+# Preserve the original order.
+# Display the resulting string.
+# ⚠️ Conditions
+# ✅ Take input from the user
+# ✅ Use a loop
+# ✅ Use a dictionary
+# ✅ Preserve first occurrence order
+# ✅ Build the result manually
+# ❌ Don't use set()
+# ❌ Don't use dict.fromkeys()
+# ❌ Don't use set as the main solution
+# ❌ Don't import any libraries
+# 💡 Hint
+# Think about:
+# seen = {}
+# result = ""
+
+string = input("Enter String: ")
+
+seen = {}
+result  = ""
+
+for i in string:
+    if i not in seen:
+        seen[i] = True
+        result += i
+
+print(f"Result: {result}")
