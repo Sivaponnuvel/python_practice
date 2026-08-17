@@ -84,3 +84,47 @@ except ValueError as e:
     print(e)
 
 
+# 🔹 Question 2 – Dictionary Interview: Group Words by Length
+# Write a Python program to group words according to their length using a dictionary.
+# Input
+# Enter Words: cat dog apple bat elephant
+# Expected Output
+# 3 : cat dog bat
+# 5 : apple
+# 8 : elephant
+# Program Flow
+# Take space-separated words from the user.
+# Use a dictionary.
+# The key should be the word length.
+# The value should contain the words having that length.
+# Preserve the original order.
+# Display each length and its words.
+# Example
+# Input:
+# Enter Words: I am learning Python coding
+# Output:
+# 1 : I
+# 2 : am
+# 8 : learning
+# 6 : Python coding
+# ⚠️ Conditions
+# ✅ Take input from the user
+# ✅ Use a dictionary
+# ✅ Use a loop
+# ✅ Group words based on len()
+# ✅ Preserve original order
+# ❌ Don't use defaultdict
+# ❌ Don't import any libraries
+# ❌ Don't sort the words
+# ❌ Don't use Counter
+
+words = input("Enter Words: ").split()
+freq = {}
+
+for i in words:
+    if len(i) not in freq:
+        freq[len(i)] = []
+    freq[len(i)].append(i)
+
+for key, value in freq.items():
+    print(f"{key} : {' '.join(value)}")
