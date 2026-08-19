@@ -90,3 +90,86 @@ else:
     print("Invalid choice ❌")
 
 
+# 🔹 Question 2 – OOP Polymorphism: Shape Area
+# Create three classes:
+# Circle
+# Rectangle
+# Square
+# Each class should have a method:
+# area()
+# Program Flow
+# Each class should implement area() differently.
+# Circle
+# Take radius and calculate:
+# Area = 3.14 × radius × radius
+# Rectangle
+# Take:
+# length
+# width
+# Calculate:
+# Area = length × width
+# Square
+# Take:
+# side
+# Calculate:
+# Area = side × side
+# Input
+# Enter Circle Radius: 5
+# Enter Rectangle Length: 10
+# Enter Rectangle Width: 5
+# Enter Square Side: 4
+# Output
+# Circle Area    : 78.5
+# Rectangle Area : 50
+# Square Area    : 16
+# ⚠️ Conditions
+# ✅ Use classes
+# ✅ Use the same area() method in all three classes
+# ✅ Implement area() differently in each class
+# ✅ Use polymorphism
+# ✅ Create objects
+# ✅ Use a loop to call area() on each object
+# ❌ Don't create separate method names like circle_area() or square_area()
+# ❌ Don't use if/elif to determine which object's area to calculate
+# ❌ Don't import any libraries
+# 💡 Hint
+# Think about:
+# shapes = [circle, rectangle, square]
+
+
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return 3.14 * self.radius * self.radius
+
+class Rectangle:
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+
+    def area(self):
+        return self.length * self.width
+
+class Square:
+    def __init__(self, side):
+        self.side = side
+
+    def area(self):
+        return self.side * self.side
+
+radius = float(input("Enter Circle Radius: "))
+length = float(input("Enter Rectangle Length: "))
+width = float(input("Enter Rectangle Width: "))
+side = float(input("Enter Square Side: "))
+
+circle = Circle(radius)
+rectangle = Rectangle(length, width)
+square = Square(side)
+
+shapes = [circle, rectangle, square]
+
+print(f"Circle Area    : {shapes[0].area()}")
+print(f"Rectangle Area : {shapes[1].area()}")
+print(f"Square Area    : {shapes[2].area()}")
