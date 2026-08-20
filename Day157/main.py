@@ -45,3 +45,58 @@ print(f"Top Student : {top_student}")
 print(f"Marks       : {top_marks}")
 
 
+# 🔹 Question 2 – Modules: Student Utility Module
+# Create your own module named:
+# student_utils.py
+# 📁 Project Structure
+# Day157/
+# │
+# ├── main.py
+# │
+# └── student_utils.py
+# File 1: student_utils.py
+# Create these three functions:
+# calculate_average(marks)
+# Returns the average of the marks.
+# find_highest(marks)
+# Returns the highest mark.
+# find_lowest(marks)
+# Returns the lowest mark.
+# Conditions for the functions
+# Use loops to find highest and lowest.
+# Don't use max().
+# Don't use min().
+# calculate_average() should calculate the average.
+# File 2: main.py
+# Program Flow
+# Import student_utils.
+# Take marks from the user as space-separated integers.
+# Convert them into a list.
+# Call all three functions.
+# Display the results.
+# Example
+# Input:
+# Enter Marks: 85 92 78 88 90
+# Output:
+# Average : 86.6
+# Highest : 92
+# Lowest  : 78
+# ⚠️ Conditions
+# ✅ Create your own module student_utils.py
+# ✅ Import the module into main.py
+# ✅ Use functions from the module
+# ✅ Take input from the user
+# ✅ Use a list
+# ✅ Use loops where required
+# ❌ Don't write the functions again inside main.py
+# ❌ Don't use max()
+# ❌ Don't use min()
+# ❌ Don't import external libraries
+
+from student_utils import calculate_average, find_highest, find_lowest
+
+marks = list(map(int, input("Enter Marks: ").split()))
+
+print(f"Average : {calculate_average(marks)}")
+print(f"Highest : {find_highest(marks)}")
+print(f"Lowest  : {find_lowest(marks)}")
