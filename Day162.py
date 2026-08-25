@@ -88,3 +88,49 @@ enroll = Enrollment(name, student_id, course_name, duration)
 enroll.display()
 
 
+# 🔹 Question 2 – Recursion: Find the Largest Digit
+# Write a Python program to find the largest digit in a number using recursion.
+# Example 1
+# Input:
+# Enter Number: 58391
+# Output:
+# Largest Digit: 9
+# Example 2
+# Input:
+# Enter Number: 2468
+# Output:
+# Largest Digit: 8
+# Program Flow
+# Create a function named:
+# find_largest_digit(number)
+# Use recursion to compare digits.
+# Extract the last digit using % 10.
+# Remove the last digit using // 10.
+# Return the largest digit.
+# ⚠️ Conditions
+# ✅ Use a recursive function
+# ✅ Use % and //
+# ✅ Take input from the user
+# ✅ Return the largest digit
+# ❌ Don't use loops
+# ❌ Don't convert the number to a string
+# ❌ Don't use max()
+# ❌ Don't import any libraries
+# 💡 Hint
+# Think about the base case:
+# if number < 10:
+#     return number
+# Then compare:
+# last_digit = number % 10
+# remaining_largest = find_largest_digit(number // 10)
+
+def find_largest_digit(number):
+    if number < 10:
+        return number
+    else:
+        last_digit = number % 10
+        remaining_largest = find_largest_digit(number // 10)
+        return last_digit if last_digit > remaining_largest else remaining_largest
+
+number = int(input("Enter Number: "))
+print(f"Largest Digit: {find_largest_digit(number)}")
