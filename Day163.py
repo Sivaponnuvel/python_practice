@@ -76,3 +76,53 @@ except ValueError:
     print("Invalid Salary ❌")
 
 
+# 🔹 Question 2 – Recursion Interview: Calculate Power
+# Write a Python program to calculate the power of a number using recursion.
+# Program Flow
+# Create a function:
+# calculate_power(base, exponent)
+# The function should calculate:
+# base ^ exponent
+# using recursion.
+# Example 1
+# Input:
+# Enter Base: 2
+# Enter Exponent: 5
+# Output:
+# Result: 32
+# Example 2
+# Input:
+# Enter Base: 10
+# Enter Exponent: 3
+# Output:
+# Result: 1000
+# ⚠️ Conditions
+# ✅ Use a recursive function
+# ✅ Take base and exponent from the user
+# ✅ Use a base case
+# ✅ Return the result
+# ❌ Don't use loops
+# ❌ Don't use **
+# ❌ Don't use pow()
+# ❌ Don't import any libraries
+# 💡 Hint
+# Think about:
+# 2⁵ = 2 × 2⁴
+# 2⁴ = 2 × 2³
+# ...
+# 2⁰ = 1
+# So your base case can be:
+# if exponent == 0:
+#     return 1
+
+def calculate_power(base, exponent):
+    if exponent == 0:
+        return 1
+    else:
+        return base * calculate_power(base, exponent - 1)
+
+base = int(input("Enter Base: "))
+exponent = int(input("Enter Exponent: "))
+
+result = calculate_power(base, exponent)
+print("Result:", result)
