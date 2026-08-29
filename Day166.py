@@ -31,3 +31,30 @@ account.deposit(2000)
 print(account.balance)
 
 
+# 🔹 Question 2 – Exception Handling
+# Write a program that divides two numbers.
+# Handle the situation where the user tries to divide by zero.
+# Example:
+# a = 10
+# b = 0
+# Expected output:
+# Cannot divide by zero
+# For normal input:
+# a = 10
+# b = 2
+# Expected output:
+# 5.0
+# ⚠️ Conditions:
+# Use try
+# Use except
+# Handle ZeroDivisionError
+# Don't let the program crash
+
+try:
+    a = int(input("Enter First Number: "))
+    b = int(input("Enter Second Number: "))
+    print(a / b)
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+except ValueError:
+    print("Invalid input")
