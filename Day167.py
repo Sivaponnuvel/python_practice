@@ -65,3 +65,62 @@ except ValueError:
     print("Please enter a valid number.")
 
 
+# 🔹 Question 2 – Exception Handling: ATM Withdrawal
+# Write a Python program to simulate a simple ATM withdrawal system.
+# Program Flow
+# Start with an initial balance:
+# Balance = 10000
+# Take the withdrawal amount from the user.
+# Use exception handling to make sure the program doesn't crash when invalid input is entered.
+# Example 1 – Successful Withdrawal
+# Input:
+# Enter Withdrawal Amount: 3000
+# Output:
+# Withdrawal Successful ✅
+# Withdrawn Amount: 3000
+# Remaining Balance: 7000
+# Example 2 – Insufficient Balance
+# Input:
+# Enter Withdrawal Amount: 15000
+# Output:
+# Insufficient Balance ❌
+# Available Balance: 10000
+# Example 3 – Invalid Input
+# Input:
+# Enter Withdrawal Amount: abc
+# Output:
+# Invalid Input ❌
+# Please enter a valid number.
+# Example 4 – Invalid Amount
+# Input:
+# Enter Withdrawal Amount: -500
+# Output:
+# Invalid Withdrawal Amount ❌
+# Amount must be greater than 0.
+# ⚠️ Conditions
+# ✅ Use input()
+# ✅ Use try
+# ✅ Use except ValueError
+# ✅ Use if/elif/else
+# ✅ Check insufficient balance
+# ✅ Check negative/zero amount
+# ❌ Don't use isdigit()
+# ❌ Don't import any libraries
+# ❌ Don't allow the balance to become negative
+
+try:
+    Balance = 10000
+    amount = int(input("Enter Withdrawal Amount: "))
+    if amount <= 0:
+        print("Invalid Withdrawal Amount ❌")
+        print("Amount must be greater than 0.")
+    elif amount > Balance:
+        print("Insufficient Balance ❌")
+    else:
+        print("Withdrawal Successful ✅")
+        print(f"Withdrawn Amount: {amount}")
+        print(f"Remaining Balance: {Balance - amount}")
+
+except ValueError:
+    print("Invalid Input ❌")
+    print("Please enter a valid number.")
