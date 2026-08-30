@@ -173,6 +173,7 @@ I am consistently improving my problem-solving and programming skills by practic
 * Day164 – Completed ✅
 * Day165 – Completed ✅
 * Day166 – Completed ✅
+* Day167 – Completed ✅
 
 ---
 
