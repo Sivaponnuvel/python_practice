@@ -55,3 +55,49 @@ else:
     print(f"{original} is Not a Palindrome Number ❌")
 
 
+# 🔹 Question 2 – Star Pattern
+# Write a Python program to print the following right-angled triangle pattern.
+# Take the number of rows from the user.
+# Example
+# Input:
+# Enter number of rows: 5
+# Output:
+# *
+# **
+# ***
+# ****
+# *****
+# Program Flow
+# If the user enters 3:
+# *
+# **
+# ***
+# If the user enters 7:
+# *
+# **
+# ***
+# ****
+# *****
+# ******
+# *******
+# ⚠️ Conditions
+# ✅ Use input()
+# ✅ Use int()
+# ✅ Use nested for loops
+# ✅ Use range()
+# ✅ Use print()
+# ❌ Don't manually write the stars
+# ❌ Don't use string multiplication like '*' * i
+# ❌ Don't use any libraries
+# 💡 Hint
+# You need:
+# for i in range(...):
+#     for j in range(...):
+#         print("*", end="")
+#     print()
+
+num = int(input("Enter number of rows: "))
+for i in range(1, num + 1):
+    for j in range(i):
+        print("*", end="")
+    print()
