@@ -40,3 +40,42 @@ for i in range(number):
     a, b = b, a + b
 
 
+# 🔹 Question 2 – Number Pattern
+# Write a Python program to print the following pattern based on the number of rows entered by the user.
+# Example
+# Input:
+# Enter number of rows: 5
+# Output:
+# 1
+# 12
+# 123
+# 1234
+# 12345
+# Example 2
+# Input:
+# Enter number of rows: 4
+# Output:
+# 1
+# 12
+# 123
+# 1234
+# ⚠️ Conditions
+# ✅ Use input()
+# ✅ Convert input to int
+# ✅ Use nested for loops
+# ✅ Use range()
+# ✅ Use print()
+# ❌ Don't manually write the numbers
+# ❌ Don't use string multiplication
+# ❌ Don't use any libraries
+# 💡 Hint
+# Think about what should happen for each row:
+# Row 1 → 1
+# Row 2 → 1 2
+# Row 3 → 1 2 3
+
+rows = int(input("Enter number of rows: "))
+for i in range(1, rows + 1):
+    for j in range(1, i + 1):
+        print(j, end="")
+    print()
