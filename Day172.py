@@ -42,3 +42,79 @@ name = input("Enter your name: ")
 greet(name)
 
 
+# 🔹 Question 2 – Exception Handling: Safe Calculator
+# Write a Python program to create a simple calculator that performs:
+# 1. Addition
+# 2. Subtraction
+# 3. Multiplication
+# 4. Division
+# Program Flow
+# Take two numbers from the user:
+# Enter first number: 20
+# Enter second number: 5
+# Then display:
+# 1. Addition
+# 2. Subtraction
+# 3. Multiplication
+# 4. Division
+# Enter your choice: 4
+# Expected Output
+# Result: 4.0
+# Handle These Errors
+# Invalid number:
+# Enter first number: abc
+# Output:
+# Invalid Input ❌
+# Please enter numbers only.
+# Division by zero:
+# Enter first number: 20
+# Enter second number: 0
+# Enter your choice: 4
+# Output:
+# Cannot divide by zero ❌
+# Invalid choice:
+# Enter your choice: 7
+# Output:
+# Invalid Choice ❌
+# Please select 1-4.
+# ⚠️ Conditions
+# ✅ Use input()
+# ✅ Use try
+# ✅ Use except ValueError
+# ✅ Handle ZeroDivisionError
+# ✅ Use if/elif/else
+# ✅ Perform all four operations
+# ❌ Don't use eval()
+# ❌ Don't import any libraries
+# ❌ Don't let the program crash
+
+
+try:
+    num1 = int(input("Enter first number: "))
+    num2 = int(input("Enter second number: "))
+
+    print("1. Addition")
+    print("2. Subtraction")
+    print("3. Multiplication")
+    print("4. Division")
+
+    choice = int(input("Enter your choice: "))
+
+    if choice == 1:
+        print(f"Result: {num1 + num2}")
+    elif choice == 2:
+        print(f"Result: {num1 - num2}")
+    elif choice == 3:
+       print(f"Result: {num1 * num2}")
+    elif choice == 4:
+        print(f"Result: {num1 / num2}")
+    else:
+        print("Invalid Choice ❌")
+        print("Please select 1-4.")
+
+except ValueError:
+    print("Invalid Input ❌")
+    print("Please enter numbers only.")
+
+except ZeroDivisionError:
+    print("Cannot divide by zero ❌")
