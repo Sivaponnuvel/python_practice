@@ -49,3 +49,38 @@ print(f"Highest Scorer: {highest_name}")
 print(f"Mark: {highest_mark}")
 
 
+# 🔹 Question 2 – Recursion: Factorial
+# Write a Python program to calculate the factorial of a number using recursion.
+# Program Flow
+# Take a number from the user and calculate its factorial.
+# Example 1
+# Input:
+# Enter a number: 5
+# Output:
+# Factorial: 120
+# Because:
+# 5 × 4 × 3 × 2 × 1 = 120
+# Example 2
+# Input:
+# Enter a number: 4
+# Output:
+# Factorial: 24
+# ⚠️ Conditions
+# ✅ Use input()
+# ✅ Convert input to int
+# ✅ Create a function factorial(number)
+# ✅ Function must call itself
+# ✅ Use a base condition
+# ❌ Don't use math.factorial()
+# ❌ Don't use a for loop
+# ❌ Don't use a while loop
+# ❌ Don't import any libraries
+
+def factorial(number):
+    if number == 0 or number == 1:
+        return 1
+    else:
+        return number * factorial(number - 1)
+
+number = int(input("Enter a number: "))
+print(f"Factorial: {factorial(number)}")
