@@ -46,3 +46,65 @@ username = input("Enter username: ")
 dashboard(username)
 
 
+# 🔹 Question 2 – OOP Next Level: Inheritance
+# Create a parent class and a child class using inheritance.
+# Create parent class:
+# Employee
+# It should have:
+# name
+# salary
+# Create a method:
+# display_employee()
+# Create child class:
+# Developer
+# It should inherit from Employee and have an additional attribute:
+# programming_language
+# Create a method:
+# display_developer()
+# Program Flow
+# Take the details from the user.
+# Input:
+# Enter Employee Name: Siva
+# Enter Salary: 30000
+# Enter Programming Language: Python
+# Output:
+# Employee Name: Siva
+# Salary: 30000
+# Programming Language: Python
+# ⚠️ Conditions
+# ✅ Create a parent class Employee
+# ✅ Create a child class Developer
+# ✅ Use inheritance
+# ✅ Use super().__init__()
+# ✅ Use self
+# ✅ Use __init__()
+# ✅ Create methods in both classes
+# ✅ Take input from the user
+# ❌ Don't duplicate name and salary initialization in Developer
+# ❌ Don't import any libraries
+
+class Employee:
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
+
+    def display_employee(self):
+        print(f"Employee Name: {self.name}")
+        print(f"Salary: {self.salary}")
+
+class Developer(Employee):
+    def __init__(self, name, salary, programming_language):
+        super().__init__(name, salary)
+        self.programming_language = programming_language
+
+    def display_developer(self):
+        self.display_employee()
+        print(f"Programming Language: {self.programming_language}")
+
+name = input("Enter Employee Name: ")
+salary = int(input("Enter Salary: "))
+programming_language = input("Enter Programming Language: ")
+
+obj = Developer(name, salary, programming_language)
+
+obj.display_developer()
