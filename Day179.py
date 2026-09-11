@@ -26,3 +26,38 @@ def reverse_sentence(sentence):
 sentence = input("Enter a sentence: ")
 reverse_sentence(sentence)
 
+
+# 🔹 Question 2 – Palindrome String
+# Write a Python program to check whether a given word is a palindrome.
+# A palindrome reads the same from both directions.
+# Input:
+# Enter a word: madam
+# Expected Output:
+# madam is a Palindrome ✅
+# For a non-palindrome:
+# Input:
+# Enter a word: python
+# Expected Output:
+# python is Not a Palindrome ❌
+# ⚠️ Conditions
+# ✅ Use input()
+# ✅ Use a loop
+# ✅ Compare the original word with its reversed form
+# ❌ Don't use [::-1]
+# ❌ Don't use reversed()
+# ❌ Don't use .reverse()
+# ❌ Don't use libraries
+# ❌ Don't use a predefined word
+
+def is_palindrome(word):
+    rev_word = ""
+    for i in word:
+        rev_word = i + rev_word
+
+    if word == rev_word:
+        print(f"{word} is a Palindrome ✅")
+    else:
+        print(f"{word} is Not a Palindrome ❌")
+
+word = input("Enter a word: ")
+is_palindrome(word)
