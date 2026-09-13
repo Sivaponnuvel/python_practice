@@ -22,3 +22,30 @@ result = list(filter(lambda x: x % 2 == 0, numbers))
 print(f"Even numbers: {result}")
 
 
+# 🔹 Question 2 – Fibonacci Series
+# Write a Python program to print the first N terms of the Fibonacci series.
+# The Fibonacci sequence starts with:
+# 0 1 1 2 3 5 8 13 ...
+# Each number is obtained by adding the previous two numbers.
+# Program Flow
+# Input:
+# Enter number of terms: 7
+# Expected Output:
+# Fibonacci series: 0 1 1 2 3 5 8
+# ⚠️ Conditions
+# ✅ Use input()
+# ✅ Convert input into an integer
+# ✅ Use a loop
+# ✅ Use variables to store the previous two numbers
+# ❌ Don't use libraries
+# ❌ Don't use a predefined Fibonacci list
+# ❌ Don't use recursion
+# ❌ Don't use a ready-made Fibonacci function
+
+number = int(input("Enter number of terms: "))
+a, b = 0, 1
+
+print("Fibonacci series:", end=" ")
+for i in range(number):
+    print(a, end=" ")
+    a, b = b, a + b
