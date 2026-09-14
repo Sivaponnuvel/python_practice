@@ -37,3 +37,39 @@ with open(filename)as file:
     print(f"Age: {lines[1].strip()}")
 
 
+# 🔹 Question 2 – Modules: Create and Use Your Own Module
+# Create a Python module named:
+# calculator.py
+# Inside the module, create these functions:
+# add(a, b)
+# multiply(a, b)
+# Then create another Python file:
+# main.py
+# Import the calculator module and use both functions.
+# Program Flow
+# Input:
+# Enter first number: 10
+# Enter second number: 5
+# Expected Output:
+# Addition: 15
+# Multiplication: 50
+# ⚠️ Conditions
+# ✅ Create calculator.py
+# ✅ Create add() function inside the module
+# ✅ Create multiply() function inside the module
+# ✅ Create main.py
+# ✅ Import the module
+# ✅ Take numbers using input()
+# ✅ Convert them to integers
+# ✅ Call both module functions
+# ❌ Don't use libraries
+# ❌ Don't write the calculation directly in main.py
+# ❌ Don't use predefined numbers
+
+from calculator import add, multiply
+
+num1 = int(input("Enter first number: "))
+num2 = int(input("Enter second number: "))
+
+print(f"Addition: {add(num1, num2)}")
+print(f"Multiplication: {multiply(num1, num2)}")
