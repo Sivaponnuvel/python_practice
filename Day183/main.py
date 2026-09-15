@@ -46,3 +46,60 @@ obj = Employee(name, salary)
 print(obj.get_details())
 
 
+# 🔹 Question 2 – JSON: Store and Read Student Data
+# Write a Python program that takes student details from the user and stores them in a JSON file.
+# Take:
+# name
+# age
+# course
+# Program Flow
+# Input:
+# Enter student name: Siva
+# Enter age: 22
+# Enter course: Python Full Stack
+# Store the data in:
+# student.json
+# The JSON file should contain data similar to:
+# {
+#     "name": "Siva",
+#     "age": 22,
+#     "course": "Python Full Stack"
+# }
+# Then read the JSON file and display:
+# Student Details:
+# Name: Siva
+# Age: 22
+# Course: Python Full Stack
+# ⚠️ Conditions
+# ✅ Use input()
+# ✅ Create a Python dictionary for the student data
+# ✅ Use the json module
+# ✅ Use json.dump() to write data
+# ✅ Use json.load() to read data
+# ✅ Store data in student.json
+# ✅ Display the data after reading
+# ❌ Don't manually write JSON syntax into the file
+# ❌ Don't hardcode student details
+# ❌ Don't use any module other than json
+
+import json
+
+student = {}
+
+name = input("Enter student name: ")
+age = int(input("Enter age: "))
+course = input("Enter course: ")
+
+student['name'] = name
+student['age'] = age
+student['course'] = course
+
+with open("D:/Backend/Python/Own try/python_practice/Day183/student.json", "w")as file:
+    json.dump(student, file)
+
+with open("D:/Backend/Python/Own try/python_practice/Day183/student.json", "r")as file:
+    read = json.load(file)
+
+    print(f"Name: {read['name']}")
+    print(f"Age: {read['age']}")
+    print(f"Course: {read['course']}")
