@@ -40,3 +40,30 @@ for key, value in freq.items():
     print(f"{key}: {value}")
 
 
+# 🔹 Question 2 – Recursion: Sum of Numbers
+# Write a Python program using recursion to calculate the sum of numbers from 1 to n.
+# Example Input:
+# Enter a number: 5
+# Expected Output:
+# Sum: 15
+# Because:
+# 1 + 2 + 3 + 4 + 5 = 15
+# Conditions:
+# Create a recursive function.
+# The function should accept n.
+# Use a base condition to stop the recursion.
+# Do not use a for or while loop.
+# Do not use Python's built-in sum().
+# Example 2:
+# Enter a number: 10
+# Expected:
+# Sum: 55
+
+def sum_of_num(n):
+    if n == 0:
+        return 0
+    else:
+        return n + sum_of_num(n - 1)
+
+number = int(input("Enter a number: "))
+print(f"Sum: {sum_of_num(number)}")
