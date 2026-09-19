@@ -193,6 +193,7 @@ I am consistently improving my problem-solving and programming skills by practic
 * Day184 – Completed ✅
 * Day185 – Completed ✅
 * Day186 – Completed ✅
+* Day187 – Completed ✅
 
 ---
 
