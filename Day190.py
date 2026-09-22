@@ -30,3 +30,37 @@ for i in matrix:
 print(f"Largest element: {largest}")
 
 
+# 🔹 Question 2 – 2D List: Calculate Row Sums
+# Given a 2D list, calculate the sum of each row.
+# Example:
+# matrix = [
+#     [10, 20, 30],
+#     [5, 15, 25],
+#     [2, 4, 6]
+# ]
+# Expected Output:
+# Row 1 sum: 60
+# Row 2 sum: 45
+# Row 3 sum: 12
+# Conditions:
+# Use nested for loops.
+# Calculate each row's sum separately.
+# Do not use sum().
+# Print the result for each row.
+
+matrix = [
+    [10, 20, 30],
+    [5, 15, 25],
+    [2, 4, 6]
+]
+
+row_num = 1
+
+for i in matrix:
+    row_sum = 0
+
+    for j in i:
+        row_sum += j
+
+    print(f"Row {row_num} Sum: {row_sum}")
+    row_num += 1
