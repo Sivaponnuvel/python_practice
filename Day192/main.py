@@ -42,3 +42,37 @@ with open(filename)as file:
     print(f"Total Students: {len(file.readlines())}")
 
 
+# 🔹 Question 2 – Modules: Create and Import a Module
+# Create a Python module named:
+# calculator.py
+# Inside calculator.py, create two functions:
+# add(a, b)
+# multiply(a, b)
+# The functions should return the addition and multiplication results.
+# Then create another Python file named:
+# main.py
+# Import the calculator module and take two numbers from the user.
+# Input
+# Enter first number: 10
+# Enter second number: 5
+# Expected Output
+# Addition: 15
+# Multiplication: 50
+# ⚠️ Conditions
+# ✅ Create a separate calculator.py module
+# ✅ Create add() function
+# ✅ Create multiply() function
+# ✅ Use import calculator
+# ✅ Take values using input()
+# ✅ Call the functions from main.py
+# ❌ Don't write the calculation functions again inside main.py
+# ❌ Don't use libraries
+# 💡 Interview focus: A module is a Python file containing reusable code such as functions, classes, or variables.
+
+from calculator import add, multiply
+
+num1 = int(input("Enter first number: "))
+num2 = int(input("Enter second number: "))
+
+print(f"Addition: {add(num1, num2)}")
+print(f"Multiplication: {multiply(num1, num2)}")
