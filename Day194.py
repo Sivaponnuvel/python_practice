@@ -39,3 +39,32 @@ number = int(input("Enter a number: "))
 print(is_prime(number))
 
 
+# 🔹 Question 2 – Common Elements in Two Lists
+# Write a Python program to find the common elements between two lists.
+# Use:
+# list1 = [1, 2, 3, 4, 5]
+# list2 = [3, 4, 5, 6, 7]
+# Expected Output
+# Common elements: [3, 4, 5]
+# ⚠️ Conditions
+# ✅ Use two lists
+# ✅ Use loops
+# ✅ Compare elements from both lists
+# ✅ Store common elements in a new list
+# ✅ Display the common elements
+# ❌ Don't use set()
+# ❌ Don't use list intersection shortcuts
+# ❌ Don't use libraries
+# ❌ Don't hardcode [3, 4, 5]
+
+list1 = [1, 2, 3, 4, 5]
+list2 = [3, 4, 5, 6, 7]
+
+comman = []
+
+for i in list1:
+    for j in list2:
+        if i == j:
+            comman.append(i)
+
+print(f"Common elements: {comman}")
