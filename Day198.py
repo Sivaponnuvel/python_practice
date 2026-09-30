@@ -43,3 +43,39 @@ account = BankAccount(account_holder, account_number, balance)
 account.display_account()
 
 
+# 🔹 Question 2 – Exception Handling: try-except
+# Create a division program that safely handles invalid input.
+# Ask the user for two numbers and divide the first number by the second.
+# Your program must handle:
+# ZeroDivisionError – when the second number is 0
+# ValueError – when the user enters something that cannot be converted to an integer
+# Example 1
+# Enter first number: 10
+# Enter second number: 2
+# Result: 5.0
+# Example 2
+# Enter first number: 10
+# Enter second number: 0
+# Cannot divide by zero.
+# Example 3
+# Enter first number: abc
+# Enter second number: 2
+# Please enter valid numbers.
+# ⚠️ Conditions
+# ✅ Must use try
+# ✅ Must use except
+# ✅ Handle ValueError
+# ✅ Handle ZeroDivisionError
+# ❌ Don't use if to replace exception handling
+
+try:
+    num1 = int(input("Enter first number: "))
+    num2 = int(input("Enter second number: "))
+
+    print(f"Result: {num1 / num2}")
+
+except ValueError:
+    print("Please enter valid numbers.")
+
+except ZeroDivisionError:
+    print("Cannot divide by zero.")
