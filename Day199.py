@@ -42,3 +42,38 @@ obj.add_mark(marks)
 obj.display_info()
 
 
+# 2. Rectangle Area & Perimeter
+# Task:
+# Class: Rectangle
+# Attributes: length, width
+# Methods: 
+# area() → length × width
+# perimeter() → 2 × (length + width)
+# Challenge: Create multiple rectangle objects and find the one with the largest area.
+
+class Rectangle:
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+
+    def area(self):
+        return self.length * self.width
+
+    def perimeter(self):
+        return 2 * (self.length + self.width)
+
+length1 = int(input("Enter length of Rectangle 1: "))
+width1 = int(input("Enter width of Rectangle 1: "))
+obj1 = Rectangle(length1, width1)
+
+length2 = int(input("Enter length of Rectangle 2: "))
+width2 = int(input("Enter width of Rectangle 2: "))
+obj2 = Rectangle(length2, width2)
+
+length3 = int(input("Enter length of Rectangle 3: "))
+width3 = int(input("Enter width of Rectangle 3: "))
+obj3 = Rectangle(length3, width3)
+
+largest = max(obj1.area(), obj2.area(), obj3.area())
+
+print(f"Maximum Area: {largest}")
