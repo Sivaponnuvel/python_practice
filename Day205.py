@@ -31,3 +31,52 @@ print("Prices >= 1000 with GST:")
 print(new_price)
 
 
+# 🔹 Question 2 – Nested Loops: Student Marks Analysis
+# Create a Python program to analyze marks of 3 students, where each student has 3 subject marks.
+# Requirements
+# Store the marks in a 2D list:
+# marks = [[80, 75, 90], [65, 70, 85], [90, 95, 88]]
+# Using nested loops:
+# 1. Display each student's marks.
+# 2. Calculate each student's total.
+# 3. Calculate each student's average.
+# 4. Display the student number, total, and average.
+# 5. Find and display the highest total among the 3 students.
+# Expected Output
+# Student 1 Marks: [80, 75, 90]
+# Total: 245
+# Average: 81.67
+# Student 2 Marks: [65, 70, 85]
+# Total: 220
+# Average: 73.33
+# Student 3 Marks: [90, 95, 88]
+# Total: 273
+# Average: 91.0
+# Highest Total: 273
+# Conditions
+# - ✅ Must use a 2D list
+# - ✅ Must use nested loops
+# - ✅ Must calculate total using a loop
+# - ✅ Must calculate average
+# - ✅ Must find the highest total
+# - ❌ Do not use sum() for calculating totals
+
+marks = [ [80, 75, 90], [65, 70, 85], [90, 95, 88] ]
+
+highest_total = 0
+
+for i in range(len(marks)):
+    print(f"Student {i + 1} Marks: {marks[i]}")
+
+    total = 0
+
+    for mark in marks[i]:
+        total += mark
+
+    print(f"Total: {total}")
+    print(f"Average: {total / len(marks[i])}")
+
+    if total > highest_total:
+        highest_total = total
+
+print(f"Highest Total: {highest_total}")
