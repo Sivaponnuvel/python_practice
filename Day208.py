@@ -36,3 +36,34 @@ print(f"Employee Role: {py_dict['role']}")
 print(f"Employee Skills: {py_dict['skills']}")
 
 
+# 🟢 Question 2 – Functions with *args and **kwargs
+# Topic: Advanced Functions
+# Create a function:
+# def order_summary(*items, **customer_details):
+# Call the function like:
+# order_summary(    "Laptop",    "Mouse",    "Keyboard",    name="Siva",    city="Villupuram",    payment="UPI")
+# Your function should:
+# 1. Print all ordered items using *items.
+# 2. Print customer name, city and payment method using **customer_details.
+# 3. Print the total number of items.
+# Expected Output
+# Customer Name: Siva
+# City: Villupuram
+# Payment: UPI
+# Ordered Items:
+# Laptop
+# Mouse
+# Keyboard
+# Total Items: 3
+
+def order_summary(*items, **customer_details):
+    print(f"Customer Name: {customer_details['name']}")
+    print(f"City: {customer_details['city']}")
+    print(f"Payment: {customer_details['payment']}")
+
+    print("Ordered Items:")
+    for i in items:
+        print(i)
+    print(f"Total Items: {len(items)}")
+
+order_summary("Laptop", "Mouse", "Keyboard",  name="Siva", city="Villupuram", payment="UPI")
