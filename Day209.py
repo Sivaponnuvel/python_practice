@@ -24,3 +24,53 @@ print(f"Selected Prices: {new_price}")
 print(f"Discounted Prices: {discount_price}")
 
 
+# 🟢 Question 2 – OOP Inheritance and super()
+# Topic: Inheritance in Python
+# Create a parent class named User with:
+# - name
+# - email
+# - A method display_user() that prints the name and email.
+# Create a child class named Developer that inherits from User, with an additional attribute:
+# - programming_language
+# Requirements:
+# 1. Use super() to call the parent class constructor.
+# 2. Override display_user() in the child class.
+# 3. Display the user's name, email, and programming language.
+# 4. Create a Developer object using user input and call display_user().
+# Example input:
+# Enter name: Siva
+# Enter email: siva@example.com
+# Enter programming language: Python
+# Expected output:
+# Name: Siva
+# Email: siva@example.com
+# Programming Language: Python
+# Rules:
+# - Use two classes: User and Developer.
+# - Use inheritance and super().
+# - Do not use dictionaries to store the user details.
+
+class User:
+    def __init__(self, name, email):
+        self.name = name
+        self.email = email
+    def display_user(self):
+        print(f"Name: {self.name}")
+        print(f"Email: {self.email}")
+
+class Developer(User):
+    def __init__(self, name, email, language):
+        super().__init__(name, email)
+        self.language = language
+
+    def display_user(self):
+        super().display_user()
+        print(f"Programming Language: {self.language}")
+
+name = input("Enter name: ")
+email = input("Enter email: ")
+language = input("Enter programming language: ")
+
+obj = Developer(name, email, language)
+
+obj.display_user()
