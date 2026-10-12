@@ -39,3 +39,45 @@ print(f"Top Student: {top_student['name']}")
 print(f"Highest Marks: {top_student['marks']}")
 
 
+# 🟢 Question 2 – File Handling
+# Topic: Reading and writing files with exception handling
+# Create a Python program that manages a simple list of tasks using a text file named tasks.txt.
+# Your program should:
+# 1. Ask the user to enter three tasks.
+# 2. Write all three tasks to tasks.txt, with each task on a separate line.
+# 3. Open the file again and read all tasks.
+# 4. Print the saved tasks with numbering, starting from 1.
+# 5. Handle FileNotFoundError when reading the file.
+# Example input:
+# Enter task 1: Learn Python
+# Enter task 2: Practice Django
+# Enter task 3: Build API
+# Expected output:
+# Saved Tasks:
+# 1. Learn Python
+# 2. Practice Django
+# 3. Build API
+# Rules:
+# - Use open() with appropriate file modes.
+# - Use with open(...) to manage the file.
+# - Use a for loop to collect the three tasks.
+# - Use try-except to handle FileNotFoundError while reading.
+# - Do not use external libraries.
+
+filename = "D:/Backend/Python/Own try/python_practice/Day210/tasks.txt"
+
+with open(filename, 'w')as file:
+    for i in range(3):
+        task = input(f"Enter task {i+1}: ")
+        file.write(f"{task}\n")
+
+try:
+    with open(filename)as file:
+        read = file.readlines()
+
+        print("Saved Tasks:")
+        for index, task in enumerate(read, start=1):
+            print(f"{index}. {task.strip()}")
+
+except FileNotFoundError:
+    print("File not found.")
