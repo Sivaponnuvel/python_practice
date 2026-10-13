@@ -47,3 +47,41 @@ print(f"Top Student: {top_student}")
 print(f"Highest Average: {highest_avg}")
 
 
+# 🟢 Question 2 – Decorators
+# Topic: Function decorators and reusable validation
+# Imagine you're building an application that accepts product prices. Create a decorator called validate_price that checks whether the price is valid before the function executes.
+# Start with this structure:
+# def validate_price(func):
+# Create a function:
+# @validate_pricedef add_product(name, price):    print(f"Product: {name}")    print(f"Price: {price}")
+# Your program should:
+# 1. Allow the function to execute when the price is greater than 0.
+# 2. Print "Invalid price!" when the price is 0 or negative.
+# 3. Use the decorator to validate the price before executing add_product().
+# 4. Test the function with both a valid and an invalid price.
+# Expected output for testing:
+# Product: Laptop
+# Price: 50000
+# Invalid price!
+# Rules:
+# - Use a decorator with @validate_price.
+# - Use an inner wrapper function.
+# - Use *args and **kwargs in the wrapper.
+# - Do not use external libraries.
+
+def validate_price(func):
+    def wrapper(*args, **kwargs):
+        price  = args[1]
+        if price <= 0:
+            print("Invalid price!")
+        else:
+            return func(*args, **kwargs)
+    return wrapper
+
+@validate_price
+def add_product(name, price):
+    print(f"Product: {name}")
+    print(f"Price: {price}")
+
+add_product("Laptop", 50000)
+add_product("Mobile", -100)
