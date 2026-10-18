@@ -31,3 +31,39 @@ else:
     print("Not a palindrome")
 
 
+# Question 2 – Dictionary Coding Problem
+# Topic: Dictionaries and Conditional Statements
+# Imagine you're developing a student marks management system. Write a Python program to find the student who scored the highest marks.
+# Use this dictionary:
+# students = {    "Arun": 85,    "Priya": 92,    "Kumar": 78,    "Divya": 95,    "Ravi": 88}
+# Expected output:
+# Top Student: Divya
+# Highest Marks: 95
+# Requirements:
+# 1. Iterate through the dictionary using a loop.
+# 2. Find the student with the highest marks.
+# 3. Print the student's name and marks.
+# 4. Do not hardcode the result.
+# Conditions:
+# - Use a loop to find the maximum.
+# - Do not use max() or sort the dictionary.
+# - Your solution should work if the marks change.
+
+students = {
+    "Arun": 85,
+    "Priya": 92,
+    "Kumar": 78,
+    "Divya": 95,
+    "Ravi": 88
+}
+
+top_mark = None
+top_student  = ""
+
+for name, mark in students.items():
+    if top_mark is None or top_mark < mark:
+        top_mark = mark
+        top_student = name
+
+print(f"Top Student: {top_student}")
+print(f"Highest Marks: {top_mark}")
