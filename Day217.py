@@ -29,3 +29,32 @@ for i in list1:
 print(f"Common Elements: {common}")
 
 
+# Question 2 – Functions and Recursion
+# Topic: Recursive Functions
+# Write a recursive Python function named sum_of_digits(n) that calculates the sum of all digits in a positive integer.
+# Example 1:
+# Enter a number: 1234
+# Sum of digits: 10
+# Explanation: \(1 + 2 + 3 + 4 = 10\)
+# Example 2:
+# Enter a number: 507
+# Sum of digits: 12
+# Requirements:
+# 1. Get an integer from user input.
+# 2. Create a function named sum_of_digits(n).
+# 3. Use recursion to calculate the sum of the digits.
+# 4. Print the result.
+# Conditions:
+# - Use recursion, not a loop, to calculate the sum.
+# - Do not convert the number into a string.
+# - Do not use built-in functions to calculate the digit sum.
+# - Assume the input is a non-negative integer.
+
+def sum_of_digits(n):
+    if n < 10:
+        return n
+    
+    return n % 10 + sum_of_digits(n // 10)
+
+number = int(input("Enter a number: "))
+print(f"Sum of digits: {sum_of_digits(number)}")
