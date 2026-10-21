@@ -36,3 +36,47 @@ for number in range(1, n + 1):
 print("Missing Number:", missing_number)
 
 
+# 🔹 Question 2 – OOP Coding Problem
+# Topic: Inheritance, Constructors and Instance Attributes
+# Create a parent class named Employee and a child class named Developer.
+# Requirements:
+# 1. Create an Employee class with an __init__() method.
+# 2. Initialize name and salary using the constructor.
+# 3. Create a display_details() method that prints the employee's name and salary.
+# 4. Create a Developer class that inherits from Employee.
+# 5. Add a programming_language attribute to Developer.
+# 6. Use super() to call the parent class constructor.
+# 7. Create a Developer object and display all three details.
+# Expected output:
+# Name: Arun
+# Salary: 30000
+# Programming Language: Python
+# Conditions:
+# - Use proper inheritance and object creation.
+# - Use self to access instance attributes.
+# - Do not import libraries.
+# - Do not hardcode the entire output outside the class methods.
+
+class Employee:
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
+    def display_details(self):
+        print(f"Name: {self.name}")
+        print(f"Salary: {self.salary}")
+
+class Developer(Employee):
+    def __init__(self, name, salary, language):
+        super().__init__(name, salary)
+        self.language = language
+    def display_details(self):
+        super().display_details()
+        print(f"Programming Language: {self.language}")
+
+name = input("Enter employee name: ")
+salary = int(input("Enter salary: "))
+language = input("Enter programming language: ")
+
+obj = Developer(name, salary, language)
+
+obj.display_details()
