@@ -46,3 +46,41 @@ else:
     print("No second-largest unique number")
 
 
+# 🔹 Question 2 – OOP Coding Problem
+# Topic: Inheritance, Method Overriding and Polymorphism
+# Create a parent class named Payment and two child classes named CreditCardPayment and UPIPayment.
+# Requirements:
+# 1. Create a Payment class with a method named pay(amount) that prints Processing payment.
+# 2. Create a CreditCardPayment class that inherits from Payment.
+# 3. Override pay(amount) in CreditCardPayment to display the amount paid using a credit card.
+# 4. Create a UPIPayment class that inherits from Payment.
+# 5. Override pay(amount) in UPIPayment to display the amount paid using UPI.
+# 6. Create objects for both child classes.
+# 7. Call pay() using both objects with an amount of 1500.
+# Expected output:
+# Paid 1500 using Credit Card
+# Paid 1500 using UPI
+# Conditions:
+# - Use proper inheritance and method overriding.
+# - Use self and method parameters correctly.
+# - Demonstrate polymorphism by calling the same method name on different objects.
+# - Do not import libraries.
+# - Do not hardcode the entire output outside the methods
+
+class Payment:
+    def pay(self, amount):
+        print("Processing payment")
+
+class CreditCardPayment(Payment):
+    def pay(self, amount):
+        print(f"Paid {amount} using Credit Card")
+
+class UPIPayment(Payment):
+    def pay(self, amount):
+        print(f"Paid {amount} using UPI")
+
+creditcard = CreditCardPayment()
+upi = UPIPayment()
+
+creditcard.pay(1500)
+upi.pay(1500)
