@@ -35,3 +35,65 @@ for i in range(len(nums)):
 print(f"Updated List: {nums}")
 
 
+# 🔹 Question 2 – OOP Coding Problem
+# Topic: Classes, Constructors, Encapsulation and Methods
+# Create a class named Student to manage student marks and calculate results.
+# Requirements
+# 1. Create a class named Student.
+# 2. Initialize name and marks using the constructor.
+# 3. Store marks in a private attribute named __marks.
+# 4. Create a method named update_marks(new_marks) to update the student's marks.
+# 5. Allow marks only between 0 and 100.
+# 6. If invalid marks are provided, display Invalid marks.
+# 7. Create a method named display_result() that displays the student's name, marks, and result.
+# 8. If marks are 40 or above, display Pass; otherwise, display Fail.
+# 9. Create a Student object, update the marks, and display the result.
+# Example:
+# student = Student("Arun", 35)student.update_marks(75)student.display_result()
+# Expected output:
+# Name: Arun
+# Marks: 75
+# Result: Pass
+# Another example:
+# student = Student("Kumar", 30)student.update_marks(120)student.display_result()
+# Expected output:
+# Invalid marks
+# Name: Kumar
+# Marks: 30
+# Result: Fail
+# Conditions
+# - Use proper class and object creation.
+# - Use self to access instance attributes.
+# - Use __marks as a private attribute.
+# - Validate marks in both the constructor and update_marks().
+# - If updated marks are invalid, preserve the previous valid marks.
+# - Do not import libraries.
+# - Do not hardcode the entire output outside class methods.
+
+class Student:
+    def __init__(self, name, marks):
+        self.name = name
+        if 0 <= marks <= 100:
+            self.__marks = marks
+        else:
+            print("Invalid marks")
+            self.__marks = 0
+
+    def update_marks(self, new_marks):
+        if 0 <= new_marks <= 100:
+            self.__marks = new_marks
+        else:
+            print("Invalid marks")
+
+    def display_result(self):
+        print(f"Name: {self.name}")
+        print(f"Marks: {self.__marks}")
+        
+        if self.__marks >= 40:
+            print("Result: Pass")
+        else:
+            print("Result: Fail")
+
+student = Student("Arun", 35)
+student.update_marks(75)
+student.display_result()
