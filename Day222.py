@@ -40,3 +40,37 @@ for i in range(len(nums)):
 print(f"Duplicate Elements: {duplicates}")
 
 
+# 🔹 Question 2 – Python Function Coding Problem
+# Topic: Functions, Default Arguments and Conditional Statements
+# Write a function named calculate_total() that calculates the total price after applying a discount.
+# Requirements:
+# 1. Accept price as a required argument.
+# 2. Accept discount as an optional argument with a default value of 10 (percentage).
+# 3. Calculate the discount amount.
+# 4. Return the final price after the discount.
+# 5. Display the returned result for both function calls below.
+# Example calls:
+# print(calculate_total(1000))print(calculate_total(2000, 20))
+# Expected output:
+# 900.0
+# 1600.0
+# Conditions:
+# - Use a function with a default argument.
+# - Use return to send the calculated result back.
+# - Reject negative prices and discounts outside the range 0 to 100 by displaying an appropriate error message.
+# - Do not import libraries.
+# - Do not hardcode the output.
+
+def calculate_total(price, discount=10):
+
+    if price < 0:
+        return "Error: Price cannot be negative."
+
+    if discount < 0 or discount > 100:
+        return "Error: Discount must be between 0 and 100."
+
+    discount_amount = price * discount / 100
+    return price - discount_amount
+
+print(calculate_total(1000))
+print(calculate_total(2000, 20))
