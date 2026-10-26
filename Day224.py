@@ -36,3 +36,52 @@ else:
     print(f"Rotated List: {roated_list}")
 
 
+# 🔹 Question 2 – OOP Coding Problem
+# Topic: Classes, Inheritance, Constructors and Method Overriding
+# Create a parent class named Vehicle and a child class named Car.
+# Requirements
+# 1. Create a parent class named Vehicle.
+# 2. Initialize brand and speed using the Vehicle constructor.
+# 3. Create a method named display_info() that displays the vehicle's brand and speed.
+# 4. Create a child class named Car that inherits from Vehicle.
+# 5. Add an additional attribute named fuel_type in the Car constructor.
+# 6. Use super() to initialize the parent class attributes.
+# 7. Override display_info() in Car.
+# 8. Inside the overridden method, use super().display_info() to display the parent class details.
+# 9. Display the car's fuel type.
+# 10. Create a Car object and call display_info().
+# Example:
+# car = Car("Toyota", 120, "Petrol")car.display_info()
+# Expected output:
+# Brand: Toyota
+# Speed: 120
+# Fuel Type: Petrol
+# Conditions
+# - Use proper class inheritance.
+# - Use self to access instance attributes.
+# - Use super() for constructor initialization and method reuse.
+# - Demonstrate method overriding.
+# - Do not import libraries.
+# - Do not hardcode the entire output outside the class methods.
+
+class Vehicle:
+    def __init__(self, brand, speed):
+        self.brand = brand
+        self.speed = speed
+        
+    def display_info(self):
+        print(f"Brand: {self.brand}")
+        print(f"Speed: {self.speed}")
+
+class Car(Vehicle):
+    def __init__(self, brand, speed, fuel_type):
+        super().__init__(brand, speed)
+        self.fuel_type = fuel_type
+
+    def display_info(self):
+        super().display_info()
+        print(f"Fuel Type: {self.fuel_type}")
+
+car = Car("Toyota", 120, "Petrol")
+
+car.display_info()
