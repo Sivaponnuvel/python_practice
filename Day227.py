@@ -46,3 +46,46 @@ else:
     print(f"GCD: {find_gcd(a, b)}")
 
 
+# 🔹 Question 2 – Generator Coding Problem
+# Topic: Functions, Generators, yield and Loops
+# Write a Python program to create a generator that produces even numbers from 1 to n.
+# Example 1:
+# n = 10
+# Expected output:
+# Even Numbers: 2 4 6 8 10
+# Example 2:
+# n = 7
+# Expected output:
+# Even Numbers: 2 4 6
+# Example 3:
+# n = 1
+# Expected output:
+# Even Numbers:
+# Requirements
+# 1. Get an integer n from the user.
+# 2. Create a generator function named even_numbers(n).
+# 3. Generate even numbers from 1 to n, including n if it is even.
+# 4. Use yield to produce each even number.
+# 5. Use a for loop to iterate through the generator.
+# 6. Display the generated numbers in increasing order.
+# 7. If n is less than 2, display only Even Numbers: without any numbers.
+# Conditions
+# - Must use yield, not return, to produce even numbers.
+# - Use loops and conditional statements.
+# - Do not create a list to store the generated numbers.
+# - Do not import libraries.
+# - Do not hardcode the output.
+# - Your solution should work for different values of n.
+
+def even_numbers(n):
+    for i in range(1, n+1):
+        if i % 2 == 0:
+            yield i
+
+n = int(input("Enter a number: "))
+
+print("Even Numbers:", end=" ")
+
+if n >= 2:
+    for num in even_numbers(n):
+        print(num, end=" ")
