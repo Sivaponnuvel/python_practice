@@ -46,3 +46,41 @@ view_dashboard("Arun", is_logged_in=True)
 view_dashboard("Arun", is_logged_in=False)
 
 
+# 🔹 Question 2 – Set Coding Problem
+# Topic: Sets, Loops and Conditional Statements
+# Write a Python program to find the common unique elements between three lists using sets.
+# Example 1:
+# list1 = [10, 20, 30, 40, 50]list2 = [20, 30, 50, 60, 70]list3 = [10, 20, 30, 50, 80]
+# Expected output:
+# Common Elements: [20, 30, 50]
+# Example 2:
+# list1 = [1, 2, 3, 4]list2 = [5, 6, 7]list3 = [8, 9, 10]
+# Expected output:
+# Common Elements: []
+# Requirements
+# 1. Create the three lists shown in Example 1.
+# 2. Convert the lists into sets.
+# 3. Find elements that exist in all three sets.
+# 4. Display each common element only once.
+# 5. Display the final result as a sorted list.
+# 6. Your solution should work when the list values change.
+# Conditions
+# - Must use set().
+# - Must use set intersection.
+# - You may use sorted() for the final output.
+# - Do not use nested loops to compare list elements.
+# - Do not import external libraries.
+# - Do not hardcode the output.
+# - Handle the case where no common elements exist.
+
+list1 = [10, 20, 30, 40, 50]
+list2 = [20, 30, 50, 60, 70]
+list3 = [10, 20, 30, 50, 80]
+
+set1 = set(list1)
+set2 = set(list2)
+set3 = set(list3)
+
+common = set1.intersection(set2, set3)
+
+print(f"Common Elements: {sorted(common)}")
