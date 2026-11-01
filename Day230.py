@@ -59,3 +59,44 @@ for num in DivisibleByThree(n):
     print(num, end=" ")
 
 
+# 🔹 Question 2 – Dictionary Comprehension Coding Problem
+# Topic: Dictionaries, Dictionary Comprehension, Strings and Conditional Statements
+# Write a Python program to count the frequency of each vowel in a given string using dictionary comprehension.
+# Count only vowels that appear in the string, ignoring uppercase and lowercase differences.
+# Example 1
+# Input:
+# text = "Programming Education"
+# Expected output:
+# Vowel Frequency: {'a': 2, 'e': 1, 'i': 2, 'o': 2, 'u': 1}
+# Example 2
+# Input:
+# text = "HELLO WORLD"
+# Expected output:
+# Vowel Frequency: {'e': 1, 'o': 2}
+# Example 3
+# Input:
+# text = "Python"
+# Expected output:
+# Vowel Frequency: {'o': 1}
+# Requirements
+# 1. Get a string from the user.
+# 2. Convert the string to lowercase for case-insensitive counting.
+# 3. Use dictionary comprehension to create the frequency dictionary.
+# 4. Count only the vowels a, e, i, o, u.
+# 5. Include only vowels that appear at least once.
+# 6. Display the dictionary with vowel keys in alphabetical order.
+# 7. Handle an empty string or a string without vowels by displaying an empty dictionary.
+# Conditions
+# - Must use dictionary comprehension.
+# - Must use count() to calculate each vowel's frequency.
+# - Do not use collections.Counter.
+# - Do not use explicit for or while loops for counting.
+# - Do not import libraries.
+# - Do not hardcode the final output.
+# - Your solution should work for different strings.
+
+string = input("Enter string: ").lower()
+
+freq = {vowel: string.count(vowel) for vowel in "aeiou" if string.count(vowel) > 0}
+
+print(f"Vowel Frequency: {freq}")
