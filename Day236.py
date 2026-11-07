@@ -38,3 +38,44 @@ n = int(input("Enter number: "))
 print(factorial(n))
 
 
+# Question 2: Count Vowels and Consonants in a String
+# Interview Topic: Strings, Loops, Conditional Statements
+# Write a Python function named count_vowels_consonants(text) to count the number of vowels and consonants in a given string.
+# Requirements:
+# 1. Create a function named count_vowels_consonants(text).
+# 2. Count vowels (a, e, i, o, u).
+# 3. Count consonants (other English alphabet letters).
+# 4. Ignore uppercase and lowercase differences.
+# 5. Ignore spaces, numbers, and special characters.
+# 6. Return both counts in a dictionary.
+# Example 1:
+# Input:
+# text = "Python Developer"
+# Expected Output:
+# {    "vowels": 5,    "consonants": 10}
+# Example 2:
+# Input:
+# text = "Hello123!"
+# Expected Output:
+# {    "vowels": 2,    "consonants": 3}
+# Example 3:
+# Input:
+# text = "12345"
+# Expected Output:
+# {    "vowels": 0,    "consonants": 0}
+
+def count_vowels_consonants(text):
+    text = text.lower()
+
+    result = {"vowels": 0, "consonants": 0}
+
+    for i in text:
+        if i in "aeiou":
+            result["vowels"] += 1
+        elif i.isalpha():
+            result["consonants"] += 1
+
+    return result
+
+text = input("Enter a text: ")
+print(count_vowels_consonants(text))
