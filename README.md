@@ -242,6 +242,7 @@ I am consistently improving my problem-solving and programming skills by practic
 * Day233 – Completed ✅
 * Day234 – Completed ✅
 * Day235 – Completed ✅
+* Day236 – Completed ✅
 
 ---
 
