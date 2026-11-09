@@ -48,3 +48,52 @@ n = int(input("Enter number: "))
 print(reverse_number(n))
 
 
+# Question 2: Find the Largest and Smallest Numbers in a List
+# Interview Topic: Lists, Loops, Conditional Statements
+# Write a Python function named find_min_max(numbers) to find the smallest and largest numbers in a list.
+# Requirements:
+# 1. Create a function named find_min_max(numbers).
+# 2. Find the smallest and largest numbers using a loop.
+# 3. Do not use min(), max(), sort(), or sorted().
+# 4. Return the result as a dictionary with keys "minimum" and "maximum".
+# 5. If the list is empty, return None.
+# 6. Do not modify the original list.
+# Example 1:
+# Input:
+# numbers = [10, 5, 30, 2, 45, 8]
+# Expected Output:
+# {    "minimum": 2,    "maximum": 45}
+# Example 2:
+# Input:
+# numbers = [5, 5, 5]
+# Expected Output:
+# {    "minimum": 5,    "maximum": 5}
+# Example 3:
+# Input:
+# numbers = []
+# Expected Output:
+# None
+
+def find_min_max(numbers):
+    if len(numbers) == 0:
+        return None
+    
+    result = {}
+    
+    max_num = numbers[0]
+    min_num = numbers[0]
+
+    for i in numbers:
+        if i > max_num:
+            max_num = i
+
+        if i < min_num:
+            min_num = i
+
+    result["minimum"] = min_num
+    result["maximum"] = max_num
+
+    return result
+
+numbers = list(map(int, input("Enter numbers: ").split()))
+print(find_min_max(numbers))
