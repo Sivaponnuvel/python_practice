@@ -37,3 +37,31 @@ n = int(input("Enter number: "))
 print(is_armstrong(n))
 
 
+# Question 2: Count the Frequency of Each Element in a List
+# Interview Topics: Lists, Dictionaries, Loops, Conditional Statements
+# Write a Python function named count_frequency(numbers) to count how many times each element appears in a list.
+# Requirements:
+# 1. Create a function named count_frequency(numbers).
+# 2. Use a loop to count the frequency of each element.
+# 3. Store the result in a dictionary.
+# 4. Do not use the count() method.
+# 5. Return the frequency dictionary.
+# 6. If the list is empty, return an empty dictionary {}.
+# Examples:
+# Input:numbers = [1, 2, 2, 3, 1, 4, 2]Output:{    1: 2,    2: 3,    3: 1,    4: 1}
+# Input:numbers = [5, 5, 5]Output:{5: 3}
+# Input:numbers = []Output:{}
+
+def count_frequency(numbers):
+    freq = {}
+
+    for i in numbers:
+        if i not in freq:
+            freq[i] = 1
+        else:
+            freq[i] += 1
+
+    return freq
+
+numbers = list(map(int, input("Enter numbers: ").split()))
+print(count_frequency(numbers))
