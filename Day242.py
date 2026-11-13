@@ -33,3 +33,42 @@ numbers = list(map(int, input("Enter numbers: ").split()))
 print(find_missing_number(numbers))
 
 
+# Question 2: Find the First Non-Repeating Character in a String
+# Interview Topics: Strings, Dictionaries, Loops, Conditional Statements
+# Write a Python function named first_non_repeating(text) to find the first character that appears only once in a string.
+# Requirements:
+# 1. Create a function named first_non_repeating(text).
+# 2. Find the first character that occurs exactly once.
+# 3. Use a dictionary to count character frequencies.
+# 4. Preserve the original character order.
+# 5. Do not use the count() method.
+# 6. Return the first non-repeating character.
+# 7. If no non-repeating character exists, return None.
+# 8. Treat uppercase and lowercase characters as different.
+# Examples:
+# Example 1:
+# Input:text = "swiss"Output:"w"
+# Example 2:
+# Input:text = "aabbcc"Output:None
+# Example 3:
+# Input:text = "programming"Output:"p"
+# Example 4:
+# Input:text = "aAbBABac"Output:"b"
+
+def first_non_repeating(text):
+    freq = {}
+
+    for i in text:
+        if i in freq:
+            freq[i] += 1
+        else:
+            freq[i] = 1
+
+    for i in text:
+        if freq[i] == 1:
+            return i
+
+    return  None
+
+text = input("Enter text: ")
+print(first_non_repeating(text))
