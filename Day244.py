@@ -34,3 +34,44 @@ obj1.display_details()
 obj2.display_details()
 
 
+# Question 2 – Employee Class and Salary Calculation
+# Interview Topics: Class, Object, Constructor, Instance Methods, self.
+# Create a Python class named Employee.
+# Requirements:
+# 1. Create a class named Employee.
+# 2. Create a constructor that accepts name, basic_salary, and bonus.
+# 3. Store these values using instance variables.
+# 4. Create a method named calculate_total_salary() that returns the total salary.
+# 5. Create another method named display_employee() to display employee details and total salary.
+# 6. Create two Employee objects with different details.
+# 7. Call display_employee() for both objects.
+# Expected Output:
+# Employee Name: Ravi
+# Basic Salary: 20000
+# Bonus: 5000
+# Total Salary: 25000
+# Employee Name: Priya
+# Basic Salary: 30000
+# Bonus: 7000
+# Total Salary: 37000
+
+class Employee:
+    def __init__(self, name, basic_salary, bonus):
+        self.name = name
+        self.basic_salary = basic_salary
+        self.bonus = bonus
+
+    def calculate_total_salary(self):
+        return self.basic_salary + self.bonus
+
+    def display_employee(self):
+        print(f"Employee Name: {self.name}")
+        print(f"Basic Salary: {self.basic_salary}")
+        print(f"Bonus: {self.bonus}")
+        print(f"Total Salary: {self.calculate_total_salary()}")
+
+emp1 = Employee("Ravi", 20000, 5000)
+emp2 = Employee("Priya", 30000, 7000)
+
+emp1.display_employee()
+emp2.display_employee()
