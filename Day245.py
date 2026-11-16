@@ -29,3 +29,28 @@ while n >= i:
     i += 1
 
 
+# Question 2 – Calculate the Sum of Digits Using While Loop
+# Interview Topics: while loop, Modulus %, Floor Division //, Variables.
+# Write a Python program to calculate the sum of all digits in a given number using a while loop.
+# Input:
+# Enter a number: 12345
+# Expected Output:
+# Sum of digits: 15
+# Explanation:
+# 1+2+3+4+5=15
+# Conditions:
+# 1. Get the number from the user using input().
+# 2. Convert the input into an integer.
+# 3. Use a while loop to extract each digit.
+# 4. Use % and // operators.
+# 5. Calculate and print the sum of digits.
+# 6. Do not convert the number into a string.
+
+number = int(input("Enter a number: "))
+sum_digit = 0
+
+while number > 0:
+    sum_digit += number % 10
+    number //= 10
+
+print(f"Sum of digits: {sum_digit}")
