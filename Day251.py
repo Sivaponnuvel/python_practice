@@ -45,3 +45,41 @@ print(f"Maximum Sum: {max_sum}")
 print(f"Consecutive Elements: {consecutive_element}")
 
 
+# Question 2 – Maximum Consecutive Character Count
+# Interview Topics: Strings, for Loop, Conditional Statements, Character Comparison, Counter Variables.
+# Given a string, find the character that appears consecutively the maximum number of times.
+# Return the character and its consecutive count.
+# Requirements:
+# 1. Get a string from the user using input().
+# 2. Find the maximum consecutive character count.
+# 3. Identify the character with the maximum consecutive occurrence.
+# 4. Display the character and its consecutive count.
+# 5. Do not use Counter() or dictionary frequency counting.
+# 6. If multiple characters have the same maximum consecutive count, return the first character that achieved that maximum.
+# Expected Output:
+# Enter a string: aaabbccccddeee
+# Character: c
+# Consecutive Count: 4
+# Another example:
+# Enter a string: aaabbbcc
+# Character: a
+# Consecutive Count: 3
+
+string = input("Enter a string: ")
+
+max_count = 0
+current_count = 1
+result = ""
+
+for i in range(1, len(string)):
+    if string[i] == string[i - 1]:
+        current_count += 1
+    else:
+        current_count = 1
+
+    if current_count > max_count:
+        max_count = current_count
+        result = string[i]
+
+print(f"Character: {result}")
+print(f"Consecutive Count: {max_count}")
