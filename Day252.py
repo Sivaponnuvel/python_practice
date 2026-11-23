@@ -34,3 +34,50 @@ print(f"Original List: {numbers}")
 print(f"Missing Number: {missing_number}")
 
 
+# Question 2 – Check Whether Two Strings Are Anagrams
+# Interview Topics: Strings, Loops, Conditional Statements, Character Frequency.
+# Two strings are called anagrams if they contain the same characters with the same frequency, but their order can be different.
+# Write a Python program to check whether two strings are anagrams.
+# Requirements:
+# 1. Get two strings from the user using input().
+# 2. Compare both strings.
+# 3. Ignore uppercase and lowercase differences.
+# 4. Ignore spaces.
+# 5. Do not use sorted() or Counter().
+# 6. Display whether the strings are anagrams.
+# Expected Output 1:
+# Enter first string: listen
+# Enter second string: silent
+# The strings are Anagrams
+# Expected Output 2:
+# Enter first string: hello
+# Enter second string: world
+# The strings are Not Anagrams
+
+string1 = input("Enter first string: ").lower().replace(" ", "")
+string2 = input("Enter second string: ").lower().replace(" ", "")
+
+if len(string1) != len(string2):
+    print("The strings are Not Anagrams")
+
+else:
+    is_anagram = True
+    
+    for i in range(len(string1)):
+        count1 = 0
+        count2 = 0
+
+        for j in range(len(string1)):
+            if string1[i] == string1[j]:
+                count1 += 1
+            if string1[i] == string2[j]:
+                count2 += 1
+
+        if count1 != count2:
+            is_anagram = False
+            break
+
+    if is_anagram:
+        print("The strings are Anagrams")
+    else:
+        print("The strings are Not Anagrams")
