@@ -35,3 +35,46 @@ else:
     print("No Non-Repeating Character Found")
 
 
+# Question 2 – Move All Zeros to the End of a List
+# Interview Topics: Lists, Loops, Conditional Statements, List Manipulation.
+# Given a list of integers, move all zeros to the end while maintaining the original order of non-zero elements.
+# Requirements:
+# 1. Get the number of elements from the user.
+# 2. Get integer values using input().
+# 3. Store the values in a list.
+# 4. Move all zeros to the end of the list.
+# 5. Maintain the original order of non-zero elements.
+# 6. Do not use sort() or sorted().
+# 7. Display the modified list.
+# Expected Output:
+# Enter how many numbers: 7
+# Enter number 1: 0
+# Enter number 2: 1
+# Enter number 3: 0
+# Enter number 4: 3
+# Enter number 5: 12
+# Enter number 6: 0
+# Enter number 7: 5
+# Original List: [0, 1, 0, 3, 12, 0, 5]
+# Modified List: [1, 3, 12, 5, 0, 0, 0]
+
+numbers = []
+n = int(input("Enter how many numbers: "))
+
+for i in range(n):
+    number = int(input(f"Enter number {i+1}: "))
+    numbers.append(number)
+
+new_list = []
+zeros = []
+
+for i in range(len(numbers)):
+    if numbers[i] == 0:
+        zeros.append(numbers[i])
+    else:
+        new_list.append(numbers[i])
+
+new_list.extend(zeros)
+
+print(f"Original List: {numbers}")
+print(f"Modified List: {new_list}")
