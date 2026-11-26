@@ -56,3 +56,42 @@ obj.withdraw(3000)
 obj.display_balance()
 
 
+# Question 2 – Inheritance and Method Overriding
+# Interview Topics: Inheritance, Parent Class, Child Class, Method Overriding, super().
+# Create a parent class named Employee and a child class named Developer.
+# Requirements:
+# 1. Create a parent class named Employee.
+# 2. Create a constructor that accepts name and salary.
+# 3. Create a method named display_details() to display employee details.
+# 4. Create a child class named Developer that inherits from Employee.
+# 5. Add an additional constructor parameter named programming_language.
+# 6. Use super() to call the parent constructor.
+# 7. Override the display_details() method in the child class.
+# 8. Display the employee name, salary and programming language.
+# 9. Create an object of the Developer class and call display_details().
+# Expected Output:
+# Employee Name: Kumar
+# Salary: 40000
+# Programming Language: Python
+
+class Employee:
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
+
+    def display_details(self):
+        print(f"Employee Name: {self.name}")
+        print(f"Salary: {self.salary}")
+
+class Developer(Employee):
+    def __init__(self, name, salary, language):
+        super().__init__(name, salary)
+        self.language = language
+
+    def display_details(self):
+        super().display_details()
+        print(f"Programming Language: {self.language}")
+
+obj1 = Developer("Kumar", 40000, "Python")
+
+obj1.display_details()
